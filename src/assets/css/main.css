@@ -6851,6 +6851,7 @@ a.ui-button:active {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-image: url("../imgs/hero-bg-dark.jpg");
 }
 .banner-2__space {
     padding: 462px 0 200px;
@@ -11125,6 +11126,7 @@ a.ui-button:active {
     z-index: -1;
     background-color: #121110;
     position: relative;
+    background-image: url("../imgs/experience/bg.png");
 }
 .experience__background:after {
     position: absolute;

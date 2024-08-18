@@ -3,29 +3,28 @@
 <template>
     <main>
         <!-- Banner 2 area start -->
-        <section
-            class="banner-2 banner-2__space overflow-hidden"
-            data-background="../assets/imgs/banner-2/banner-item-1.png"
-        >
+        <section class="banner-2 banner-2__space overflow-hidden">
             <div class="container">
                 <div class="row g-24">
                     <div class="col-12">
                         <div class="banner-2__content">
                             <h1 class="banner-2__title mb-20 mb-sm-15 mb-xs-10 title-animation">
-                                Lunch & <br />
-                                <span>Happy Hour</span>
+                                Sizzle & <br />
+                                <span>Serve</span>
                             </h1>
-                            <p class="mb-45 mb-sm-40 mb-xs-35">Check our latest seasonal promotions</p>
+                            <p class="mb-45 mb-sm-40 mb-xs-35">
+                                Whip up something fire &#x1F525; with our top trending dishes!
+                            </p>
 
                             <a href="reservation.html" class="rr-btn-2 wow clip-a-z">
                                 <span class="hover-rl"></span>
                                 <span class="fake_hover"></span>
                                 <span class="btn-wrap">
                                     <span class="text-one"
-                                        >Book A Table <img src="../assets/imgs/icon/arrow-right.svg" alt="not found"
+                                        >Get Cookin'<img src="../assets/imgs/icon/arrow-right.svg" alt="not found"
                                     /></span>
                                     <span class="text-two"
-                                        >Book A Table <img src="../assets/imgs/icon/arrow-right.svg" alt="not found"
+                                        >Get Cookin'<img src="../assets/imgs/icon/arrow-right.svg" alt="not found"
                                     /></span>
                                 </span>
                             </a>
@@ -115,10 +114,7 @@
         <!-- our-service-2 area end -->
 
         <!-- experience area start -->
-        <div
-            class="experience experience__background experience__space experience__bottom-up overflow-hidden"
-            data-background="../assets/imgs/experience/bg.png"
-        >
+        <div class="experience experience__background experience__space experience__bottom-up overflow-hidden">
             <!-- /our-project active with 'experience__bottom-up' -->
             <div class="container">
                 <div class="row g-24">
@@ -126,41 +122,29 @@
                         <div class="experience__item-wrapper">
                             <div class="experience__item">
                                 <p>
-                                    <span class="odometer" data-count="15">0</span>
-                                    <span
-                                        >New <br />
-                                        Cool Projects</span
-                                    >
+                                    <span class="odometer" data-count="70">0</span>
+                                    <span>Recipes <br />That Slap</span>
                                 </p>
                             </div>
 
                             <div class="experience__item">
                                 <p>
-                                    <span class="odometer" data-count="15">0</span>
-                                    <span
-                                        >Total <br />
-                                        Awards Win</span
-                                    >
+                                    <span class="odometer" data-count="40">0</span>
+                                    <span>Foodie <br />Followers</span>
                                 </p>
                             </div>
 
                             <div class="experience__item">
                                 <p>
                                     <span class="odometer" data-count="20">0</span>
-                                    <span
-                                        >Unique <br />
-                                        Food Specialities</span
-                                    >
+                                    <span>Chefs <br />On Fire</span>
                                 </p>
                             </div>
 
                             <div class="experience__item">
                                 <p>
-                                    <span class="odometer" data-count="69">0</span>
-                                    <span
-                                        >Hard <br />
-                                        Team Members</span
-                                    >
+                                    <span class="odometer"><i class="fa-solid fa-infinity"></i></span>
+                                    <span>Vibes <br />In the Kitchen</span>
                                 </p>
                             </div>
                         </div>

@@ -8,27 +8,6 @@ export default {};
         <div id="header-sticky" class="header__area header-2">
             <div class="container">
                 <div class="header__main-wrapper">
-                    <div class="header__top d-none d-xl-block">
-                        <div class="row g-24">
-                            <div class="col-6">
-                                <ul class="header__top-menu d-flex">
-                                    <li>
-                                        <a href="https://maps.app.goo.gl/p6WpNqfgEGEPa7yK6"
-                                            ><i class="fa-solid fa-location-dot"></i> Olive State, Burklin, Germany
-                                            25HYT, DE</a
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-6">
-                                <ul class="header__top-menu header__top-menu-2 d-flex justify-content-end">
-                                    <li><a href="index-2.html">Find a Store</a></li>
-                                    <li><a href="index-2.html">Order Tracking</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="mega__menu-wrapper p-relative">
                         <div class="header__main">
                             <div class="header__left d-flex">
@@ -41,14 +20,14 @@ export default {};
                                     </div>
                                 </div>
 
-                                <div class="header__lang__select">
+                                <!-- <div class="header__lang__select">
                                     <select id="header_lang__select">
                                         <option>EN - IT</option>
                                         <option>EN - AR</option>
                                         <option>EN - BD</option>
                                         <option>EN - FR</option>
                                     </select>
-                                </div>
+                                </div> -->
                             </div>
 
                             <div class="header__logo">
@@ -66,8 +45,8 @@ export default {};
                                             <span class="hover-rl"></span>
                                             <span class="fake_hover"></span>
                                             <span class="btn-wrap">
-                                                <span class="text-one">Book A Table</span>
-                                                <span class="text-two">Book A Table</span>
+                                                <span class="text-one">Become a member</span>
+                                                <span class="text-two">Become a member</span>
                                             </span>
                                         </a>
                                     </div>
@@ -83,151 +62,21 @@ export default {};
                                     <div class="main-menu main-menu-2">
                                         <nav id="mobile-menu">
                                             <ul>
-                                                <li class="has-dropdown has-mega-menu active">
+                                                <li class="active">
                                                     <a href="javascript:void(0)">Home</a>
-                                                    <ul class="mega-menu mega-menu-grid-3">
-                                                        <li>
-                                                            <div class="home__menu-item">
-                                                                <div class="home__menu-thumb">
-                                                                    <img
-                                                                        src="../../assets/imgs/menu/menu-home-1.jpg"
-                                                                        alt="thumb not found"
-                                                                    />
-                                                                    <div class="home__menu-buttons">
-                                                                        <a
-                                                                            href="index.html"
-                                                                            class="rr-btn__header rr-btn__header-mega-menu"
-                                                                        >
-                                                                            <span class="hover-rl"></span>
-                                                                            <span class="fake_hover"></span>
-                                                                            <span class="btn-wrap">
-                                                                                <span class="text-one">MULTI PAGE</span>
-                                                                                <span class="text-two">MULTI PAGE</span>
-                                                                            </span>
-                                                                        </a>
-                                                                        <a
-                                                                            href="index-one-page.html"
-                                                                            class="rr-btn__header rr-btn__header-mega-menu"
-                                                                        >
-                                                                            <span class="hover-rl"></span>
-                                                                            <span class="fake_hover"></span>
-                                                                            <span class="btn-wrap">
-                                                                                <span class="text-one">ONE PAGE</span>
-                                                                                <span class="text-two">ONE PAGE</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <h4 class="home__menu-title">Home 01</h4>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="home__menu-item">
-                                                                <div class="home__menu-thumb">
-                                                                    <img
-                                                                        src="../../assets/imgs/menu/menu-home-2.jpg"
-                                                                        alt="thumb not found"
-                                                                    />
-                                                                    <div class="home__menu-buttons">
-                                                                        <a
-                                                                            href="index-2.html"
-                                                                            class="rr-btn__header rr-btn__header-mega-menu"
-                                                                        >
-                                                                            <span class="hover-rl"></span>
-                                                                            <span class="fake_hover"></span>
-                                                                            <span class="btn-wrap">
-                                                                                <span class="text-one">MULTI PAGE</span>
-                                                                                <span class="text-two">MULTI PAGE</span>
-                                                                            </span>
-                                                                        </a>
-                                                                        <a
-                                                                            href="index-2-one-page.html"
-                                                                            class="rr-btn__header rr-btn__header-mega-menu"
-                                                                        >
-                                                                            <span class="hover-rl"></span>
-                                                                            <span class="fake_hover"></span>
-                                                                            <span class="btn-wrap">
-                                                                                <span class="text-one">ONE PAGE</span>
-                                                                                <span class="text-two">ONE PAGE</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <h4 class="home__menu-title">Home 02</h4>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="home__menu-item">
-                                                                <div class="home__menu-thumb">
-                                                                    <img
-                                                                        src="../../assets/imgs/menu/menu-home-3.jpg"
-                                                                        alt="thumb not found"
-                                                                    />
-                                                                    <div class="home__menu-buttons">
-                                                                        <a
-                                                                            href="index-3.html"
-                                                                            class="rr-btn__header rr-btn__header-mega-menu"
-                                                                        >
-                                                                            <span class="hover-rl"></span>
-                                                                            <span class="fake_hover"></span>
-                                                                            <span class="btn-wrap">
-                                                                                <span class="text-one">MULTI PAGE</span>
-                                                                                <span class="text-two">MULTI PAGE</span>
-                                                                            </span>
-                                                                        </a>
-                                                                        <a
-                                                                            href="index-3-one-page.html"
-                                                                            class="rr-btn__header rr-btn__header-mega-menu"
-                                                                        >
-                                                                            <span class="hover-rl"></span>
-                                                                            <span class="fake_hover"></span>
-                                                                            <span class="btn-wrap">
-                                                                                <span class="text-one">ONE PAGE</span>
-                                                                                <span class="text-two">ONE PAGE</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <h4 class="home__menu-title">Home 03</h4>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
                                                 </li>
                                                 <li class="has-dropdown">
-                                                    <a href="javascript:void(0)">Pages</a>
+                                                    <a href="">Recipes</a>
                                                     <ul class="submenu">
-                                                        <li><a href="about-us.html">About us</a></li>
-                                                        <li><a href="menu.html">Menu</a></li>
-                                                        <li><a href="gallery.html">Gallery</a></li>
-                                                        <li><a href="reservation.html">Reservation</a></li>
-                                                        <li><a href="404.html">404 Page</a></li>
+                                                        <li><a href="">All recipes</a></li>
+                                                        <li><a href="">Breakfast recipes</a></li>
+                                                        <li><a href="">Lunch recipes</a></li>
+                                                        <li><a href="">Dinner recipes</a></li>
+                                                        <li><a href="">Dessert recipes</a></li>
                                                     </ul>
                                                 </li>
-                                                <li class="has-dropdown">
-                                                    <a href="shop.html">Shop</a>
-                                                    <ul class="submenu">
-                                                        <li><a href="shop.html">Shop</a></li>
-                                                        <li><a href="shop-details.html">Shop Details</a></li>
-                                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                                        <li><a href="cart.html">Cart</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-dropdown">
-                                                    <a href="blog.html">Blog</a>
-                                                    <ul class="submenu">
-                                                        <li><a href="blog.html">Blog</a></li>
-                                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-dropdown">
-                                                    <a href="team.html">Chef</a>
-                                                    <ul class="submenu">
-                                                        <li><a href="team.html">Chef</a></li>
-                                                        <li><a href="team-details.html">Chef Details</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="contact-us.html">contact</a></li>
+                                                <li><a href="">About us</a></li>
+                                                <li><a href="">Contact</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -287,26 +136,7 @@ export default {};
                                                     stroke-linejoin="round"
                                                 />
                                             </svg>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="cart.html">
-                                            <svg
-                                                width="20"
-                                                height="20"
-                                                viewBox="0 0 20 20"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M1 1H1.26835C1.74213 1 1.97922 1 2.17246 1.08548C2.34283 1.16084 2.48871 1.2823 2.59375 1.43616C2.71289 1.61066 2.75578 1.84366 2.8418 2.30957L5.00004 14L15.4195 14C15.8739 14 16.1016 14 16.2896 13.9198C16.4554 13.8491 16.5989 13.7348 16.7051 13.5891C16.8255 13.424 16.8763 13.2025 16.9785 12.7597L18.5477 5.95972C18.7022 5.29025 18.7796 4.95561 18.6946 4.69263C18.6201 4.46207 18.4639 4.26634 18.256 4.14192C18.0189 4 17.6758 4 16.9887 4H3.5M16 19C15.4477 19 15 18.5523 15 18C15 17.4477 15.4477 17 16 17C16.5523 17 17 17.4477 17 18C17 18.5523 16.5523 19 16 19ZM6 19C5.44772 19 5 18.5523 5 18C5 17.4477 5.44772 17 6 17C6.55228 17 7 17.4477 7 18C7 18.5523 6.55228 19 6 19Z"
-                                                    stroke="white"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                />
-                                            </svg>
-                                            <span>2</span>
+                                            <span>3</span>
                                         </a>
                                     </li>
                                 </ul>
