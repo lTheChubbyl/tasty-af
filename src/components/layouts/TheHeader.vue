@@ -31,17 +31,17 @@ export default {};
                             </div>
 
                             <div class="header__logo">
-                                <a href="index.html">
+                                <router-link to="/">
                                     <div class="logo">
                                         <img src="../../assets/imgs/logo/logo-white.svg" alt="logo not found" />
                                     </div>
-                                </a>
+                                </router-link>
                             </div>
 
                             <div class="header__right d-none d-sm-inline-flex">
                                 <div class="header__action d-flex align-items-center">
                                     <div class="header__btn-wrap">
-                                        <a href="reservation.html" class="rr-btn-2__header">
+                                        <a href="" class="rr-btn-2__header">
                                             <span class="hover-rl"></span>
                                             <span class="fake_hover"></span>
                                             <span class="btn-wrap">
@@ -63,7 +63,7 @@ export default {};
                                         <nav id="mobile-menu">
                                             <ul>
                                                 <li class="active">
-                                                    <a href="javascript:void(0)">Home</a>
+                                                    <a href="">Home</a>
                                                 </li>
                                                 <li class="has-dropdown">
                                                     <a href="">Recipes</a>
@@ -101,7 +101,7 @@ export default {};
                                         </button>
                                     </li>
                                     <li>
-                                        <a href="cart.html">
+                                        <a href="">
                                             <svg
                                                 width="20"
                                                 height="20"
@@ -120,7 +120,7 @@ export default {};
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="wishlist.html">
+                                        <a href="">
                                             <svg
                                                 width="20"
                                                 height="18"

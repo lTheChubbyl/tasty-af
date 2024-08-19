@@ -1,14 +1,16 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import NotFound from "../views/NotFound.vue";
+import RecipesView from "../views/recipes/RecipesView.vue";
+import RecipeDetailView from "../views/recipes/RecipeDetailView.vue";
+import AboutView from "../views/AboutView.vue";
+import ContactView from "../views/ContactView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
-        {
-            path: "/",
-            name: "home",
-            component: HomeView,
-        },
+        { path: "/", redirect: { name: "home" } },
+        { path: "/home", name: "home", component: HomeView },
         {
             path: "/about",
             name: "about",
@@ -17,6 +19,11 @@ const router = createRouter({
             // which is lazy-loaded when the route is visited.
             component: () => import("../views/AboutView.vue"),
         },
+        { path: "/recipes", name: "recipes", component: RecipesView },
+        { path: "/recipes/:id", name: "recipe-detail", component: RecipeDetailView },
+        { path: "/about", name: "about", component: AboutView },
+        { path: "/contact", name: "contact", component: ContactView },
+        { path: "/:notFound(.*)", component: NotFound },
     ],
 });
 
