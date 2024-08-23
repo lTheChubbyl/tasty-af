@@ -33,7 +33,7 @@ export default {};
                             <div class="header__logo">
                                 <router-link to="/">
                                     <div class="logo">
-                                        <img src="../../assets/imgs/logo/logo-white.svg" alt="logo not found" />
+                                        <img src="@/assets/imgs/logo/logo-white.svg" alt="logo not found" />
                                     </div>
                                 </router-link>
                             </div>
@@ -41,14 +41,14 @@ export default {};
                             <div class="header__right d-none d-sm-inline-flex">
                                 <div class="header__action d-flex align-items-center">
                                     <div class="header__btn-wrap">
-                                        <a href="" class="rr-btn-2__header">
+                                        <router-link to="/auth" class="rr-btn-2__header">
                                             <span class="hover-rl"></span>
                                             <span class="fake_hover"></span>
                                             <span class="btn-wrap">
                                                 <span class="text-one">Become a member</span>
                                                 <span class="text-two">Become a member</span>
                                             </span>
-                                        </a>
+                                        </router-link>
                                     </div>
                                 </div>
                             </div>
@@ -63,20 +63,36 @@ export default {};
                                         <nav id="mobile-menu">
                                             <ul>
                                                 <li class="active">
-                                                    <a href="">Home</a>
+                                                    <router-link to="/home">Home</router-link>
                                                 </li>
                                                 <li class="has-dropdown">
-                                                    <a href="">Recipes</a>
+                                                    <router-link to="/recipes">Recipes</router-link>
                                                     <ul class="submenu">
-                                                        <li><a href="">All recipes</a></li>
-                                                        <li><a href="">Breakfast recipes</a></li>
-                                                        <li><a href="">Lunch recipes</a></li>
-                                                        <li><a href="">Dinner recipes</a></li>
-                                                        <li><a href="">Dessert recipes</a></li>
+                                                        <li><router-link to="/recipes">All recipes</router-link></li>
+                                                        <li>
+                                                            <router-link to="/recipes?category=breakfast"
+                                                                >Breakfast recipes</router-link
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <router-link to="/recipes?category=lunch"
+                                                                >Lunch recipes</router-link
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <router-link to="/recipes?category=dinner"
+                                                                >Dinner recipes</router-link
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <router-link to="/recipes?category=dessert"
+                                                                >Dessert recipes</router-link
+                                                            >
+                                                        </li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="">About us</a></li>
-                                                <li><a href="">Contact</a></li>
+                                                <li><router-link to="/about">About us</router-link></li>
+                                                <li><router-link to="/contact">Contact</router-link></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -101,7 +117,7 @@ export default {};
                                         </button>
                                     </li>
                                     <li>
-                                        <a href="">
+                                        <router-link to="/auth">
                                             <svg
                                                 width="20"
                                                 height="20"
@@ -117,10 +133,10 @@ export default {};
                                                     stroke-linejoin="round"
                                                 />
                                             </svg>
-                                        </a>
+                                        </router-link>
                                     </li>
                                     <li>
-                                        <a href="">
+                                        <router-link to="/profile/1/favorites">
                                             <svg
                                                 width="20"
                                                 height="18"
@@ -137,7 +153,7 @@ export default {};
                                                 />
                                             </svg>
                                             <span>3</span>
-                                        </a>
+                                        </router-link>
                                     </li>
                                 </ul>
                             </div>
