@@ -42,10 +42,10 @@ export default {
                                 <span class="fake_hover"></span>
                                 <span class="btn-wrap">
                                     <span class="text-one"
-                                        >Get Cookin'<img src="../assets/imgs/icon/arrow-right.svg" alt="not found"
+                                        >Get Cookin'<img src="@/assets/imgs/icon/arrow-right.svg" alt="not found"
                                     /></span>
                                     <span class="text-two"
-                                        >Get Cookin'<img src="../assets/imgs/icon/arrow-right.svg" alt="not found"
+                                        >Get Cookin'<img src="@/assets/imgs/icon/arrow-right.svg" alt="not found"
                                     /></span>
                                 </span>
                             </a>
@@ -87,7 +87,7 @@ export default {
         <section class="about-2 section-space overflow-hidden">
             <div class="container">
                 <div class="about-2__shape">
-                    <img src="../assets/imgs/about-2/burger.png" class="img-fluid leftRight" alt="not found" />
+                    <img src="@/assets/imgs/about-2/burger.png" class="img-fluid leftRight" alt="not found" />
                 </div>
                 <div class="row g-24 align-items-center">
                     <div class="col-xl-6">
@@ -104,7 +104,7 @@ export default {
                                 <div class="about-2__content-item mb-35">
                                     <div class="about-2__content-item__media">
                                         <img
-                                            src="../assets/imgs/about-2/about-1.png"
+                                            src="@/assets/imgs/about-2/about-1.png"
                                             class="img-fluid"
                                             alt="not found"
                                         />
@@ -120,7 +120,7 @@ export default {
                                 <div class="about-2__content-item mb-35">
                                     <div class="about-2__content-item__media">
                                         <img
-                                            src="../assets/imgs/about-2/about-2.png"
+                                            src="@/assets/imgs/about-2/about-2.png"
                                             class="img-fluid"
                                             alt="not found"
                                         />
@@ -140,10 +140,10 @@ export default {
                                 <span class="fake_hover"></span>
                                 <span class="btn-wrap">
                                     <span class="text-one"
-                                        >Read More <img src="../assets/imgs/icon/arrow-right-2.svg" alt="not found"
+                                        >Read More <img src="@/assets/imgs/icon/arrow-right-2.svg" alt="not found"
                                     /></span>
                                     <span class="text-two"
-                                        >Read More <img src="../assets/imgs/icon/arrow-right-2.svg" alt="not found"
+                                        >Read More <img src="@/assets/imgs/icon/arrow-right-2.svg" alt="not found"
                                     /></span>
                                 </span>
                             </a>
@@ -152,7 +152,7 @@ export default {
 
                     <div class="col-xl-6">
                         <div class="about-2__media wow clip-a-z">
-                            <img src="../assets/imgs/about-2/about-food.jpg" class="img-fluid" alt="image not found" />
+                            <img src="@/assets/imgs/about-2/about-food.jpg" class="img-fluid" alt="image not found" />
                         </div>
                     </div>
                 </div>
