@@ -22,8 +22,8 @@ defineProps({
         <span class="hover-rl"></span>
         <span class="fake_hover"></span>
         <span class="btn-wrap">
-            <span class="text-one">{{ text }}<img src="@/assets/imgs/icon/arrow-right.svg" alt="not found" /></span>
-            <span class="text-two">{{ text }}<img src="@/assets/imgs/icon/arrow-right.svg" alt="not found" /></span>
+            <span class="text-one">{{ text }} <i class="fa-light fa-arrow-right-long"></i></span>
+            <span class="text-two">{{ text }} <i class="fa-light fa-arrow-right-long"></i></span>
         </span>
     </router-link>
 </template>

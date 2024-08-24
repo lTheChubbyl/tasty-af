@@ -1747,8 +1747,8 @@ a:hover {
 .rr-btn-2 .btn-wrap .text-two:after {
     content: "";
     width: 30px;
-    height: 1px;
     top: 50%;
+    height: 1px;
     right: 28px;
     z-index: -1;
     position: absolute;
@@ -1756,8 +1756,8 @@ a:hover {
     -webkit-animation: leftRightX4 1.3s infinite alternate;
     animation: leftRightX4 1.3s infinite alternate;
 }
-.rr-btn-2 .btn-wrap .text-one img,
-.rr-btn-2 .btn-wrap .text-two img {
+.rr-btn-2 .btn-wrap .text-one i,
+.rr-btn-2 .btn-wrap .text-two i {
     margin-left: 62px;
 }
 .rr-btn-2 .btn-wrap .text-one {
@@ -1951,8 +1951,8 @@ a:hover {
     -webkit-animation: leftRightX4 1.3s infinite alternate;
     animation: leftRightX4 1.3s infinite alternate;
 }
-.rr-btn .btn-wrap .text-one img,
-.rr-btn .btn-wrap .text-two img {
+.rr-btn .btn-wrap .text-one i,
+.rr-btn .btn-wrap .text-two i {
     padding-left: 69px;
 }
 .rr-btn .btn-wrap .text-one {
