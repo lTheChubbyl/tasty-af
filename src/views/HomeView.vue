@@ -37,7 +37,7 @@ export default {
                                 Whip up something fire &#x1F525; with our top trending dishes!
                             </p>
 
-                            <a href="reservation.html" class="rr-btn-2 wow clip-a-z">
+                            <!-- <a href="reservation.html" class="rr-btn-2 wow clip-a-z">
                                 <span class="hover-rl"></span>
                                 <span class="fake_hover"></span>
                                 <span class="btn-wrap">
@@ -48,7 +48,8 @@ export default {
                                         >Get Cookin'<img src="@/assets/imgs/icon/arrow-right.svg" alt="not found"
                                     /></span>
                                 </span>
-                            </a>
+                            </a> -->
+                            <base-button text="Get Cookin'" link="/recipes" color="mix"></base-button>
                         </div>
                     </div>
                 </div>

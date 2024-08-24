@@ -1,6 +1,6 @@
 <script setup>
 defineOptions({
-    name: "HighlightedPartImage",
+    name: "HighlightedImage",
 });
 
 defineProps({

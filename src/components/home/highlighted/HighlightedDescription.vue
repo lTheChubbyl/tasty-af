@@ -1,6 +1,6 @@
 <script setup>
 defineOptions({
-    name: "HighlightedPartDescription",
+    name: "HighlightedDescription",
 });
 
 defineProps({
@@ -26,6 +26,8 @@ defineProps({
         <h5 class="mb-70 mt-xl-30 mb-lg-30 mb-md-30 mb-sm-25 mb-xs-20 text-uppercase">
             <router-link :to="highlighted.link">How Restaurants Foster Connections and Create Memories</router-link>
         </h5>
+
+        <base-button text="Read More" :link="highlighted.link" color="red" hasArrow></base-button>
 
         <router-link :to="highlighted.link" class="rr-btn rr-btn__red">
             <span class="hover-rl"></span>
