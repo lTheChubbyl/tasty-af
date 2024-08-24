@@ -19,19 +19,10 @@ export default {};
                                         </a>
                                     </div>
                                 </div>
-
-                                <!-- <div class="header__lang__select">
-                                    <select id="header_lang__select">
-                                        <option>EN - IT</option>
-                                        <option>EN - AR</option>
-                                        <option>EN - BD</option>
-                                        <option>EN - FR</option>
-                                    </select>
-                                </div> -->
                             </div>
 
                             <div class="header__logo">
-                                <router-link to="/">
+                                <router-link to="/home">
                                     <div class="logo">
                                         <img src="@/assets/imgs/logo/logo-white.svg" alt="logo not found" />
                                     </div>
@@ -45,8 +36,8 @@ export default {};
                                             <span class="hover-rl"></span>
                                             <span class="fake_hover"></span>
                                             <span class="btn-wrap">
-                                                <span class="text-one">Become a member</span>
-                                                <span class="text-two">Become a member</span>
+                                                <span class="text-one">Sign Up Now</span>
+                                                <span class="text-two">Sign Up Now</span>
                                             </span>
                                         </router-link>
                                     </div>

@@ -1,10 +1,12 @@
 <script setup>
 import RecipePreview from "@/components/recipes/RecipePreview.vue";
+import SidebarSection from "@/components/recipes/SidebarSection.vue";
 
 defineOptions({
     name: "RecipesView",
     components: {
         RecipePreview,
+        SidebarSection,
     },
 });
 
@@ -208,187 +210,7 @@ const recipes = [
                         </ul>
                     </div>
                 </div>
-
-                <div class="col-xl-4">
-                    <div class="blog-4__right sidebar-rr-sticky">
-                        <div class="sidebar">
-                            <div class="sidebar__widget section-bg-2">
-                                <div class="sidebar__widget-search">
-                                    <div class="search__bar">
-                                        <input type="text" id="search" placeholder="Enter Keyword" />
-                                        <button>
-                                            <i class="fa-regular fa-magnifying-glass"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="sidebar__widget section-bg-2">
-                                <h4 class="sidebar__widget-title">Recent Posts</h4>
-                                <div class="sidebar-post__wrapper">
-                                    <div class="sidebar__widget-post">
-                                        <a href="blog-details.html" class="sidebar__widget-post__thum">
-                                            <img
-                                                src="@/assets/imgs/sidebar/popular-post-1.png"
-                                                class="img-fluid"
-                                                alt="image not found"
-                                            />
-                                        </a>
-                                        <div class="sidebar__widget-post__content">
-                                            <ul class="sidebar__widget-post__content-meta">
-                                                <li>
-                                                    <a href="blog-details.html">
-                                                        <i class="fa-light fa-circle-user"></i>
-                                                        by David Smith
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <a href="blog-details.html">
-                                                <h5 class="sidebar__widget-post__content-title">
-                                                    Craftsmanship of Artisanal Foods in Restaurants
-                                                </h5>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="sidebar__widget-post">
-                                        <a href="blog-details.html" class="sidebar__widget-post__thum">
-                                            <img
-                                                src="@/assets/imgs/sidebar/popular-post-2.png"
-                                                class="img-fluid"
-                                                alt="image not found"
-                                            />
-                                        </a>
-                                        <div class="sidebar__widget-post__content">
-                                            <ul class="sidebar__widget-post__content-meta">
-                                                <li>
-                                                    <a href="blog-details.html">
-                                                        <i class="fa-light fa-circle-user"></i>
-                                                        by David Smith
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <a href="blog-details.html">
-                                                <h5 class="sidebar__widget-post__content-title">
-                                                    Restaurants Are Adapting to Changing Dietary Trends
-                                                </h5>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="sidebar__widget-post">
-                                        <a href="blog-details.html" class="sidebar__widget-post__thum">
-                                            <img
-                                                src="@/assets/imgs/sidebar/popular-post-3.png"
-                                                class="img-fluid"
-                                                alt="image not found"
-                                            />
-                                        </a>
-                                        <div class="sidebar__widget-post__content">
-                                            <ul class="sidebar__widget-post__content-meta">
-                                                <li>
-                                                    <a href="blog-details.html">
-                                                        <i class="fa-light fa-circle-user"></i>
-                                                        by David Smith
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <a href="blog-details.html">
-                                                <h5 class="sidebar__widget-post__content-title">
-                                                    Passion and Perseverance from Renowned Chefs
-                                                </h5>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <div class="sidebar__widget section-bg-2">
-                                <h4 class="sidebar__widget-title">Categories</h4>
-                                <div class="sidebar__widget-category">
-                                    <a href="blog-details.html"
-                                        >Soups and Salads <i class="fa-solid fa-arrow-right"></i
-                                    ></a>
-                                    <a href="blog-details.html"
-                                        >Pasta and Noodles <i class="fa-solid fa-arrow-right"></i
-                                    ></a>
-                                    <a href="blog-details.html"
-                                        >Vegetarian and Vegan <i class="fa-solid fa-arrow-right"></i
-                                    ></a>
-                                    <a href="blog-details.html"
-                                        >Pizza and Flatbreads <i class="fa-solid fa-arrow-right"></i
-                                    ></a>
-                                </div>
-                            </div>
-                            <!-- <div class="sidebar__widget section-bg-2">
-                                <h4 class="sidebar__widget-title">Gallery</h4>
-                                <div class="sidebar__widget-gallery">
-                                    <div class="gallery-photo">
-                                        <a class="popup-image" href="@/assets/imgs/blog-4/gallery/big/gallery-1.png">
-                                            <img
-                                                src="@/assets/imgs/blog-4/gallery/gallery-1.png"
-                                                class="img-fluid"
-                                                alt="image not found"
-                                            />
-                                        </a>
-
-                                        <a class="popup-image" href="@/assets/imgs/blog-4/gallery/big/gallery-2.png">
-                                            <img
-                                                src="@/assets/imgs/blog-4/gallery/gallery-2.png"
-                                                class="img-fluid"
-                                                alt="image not found"
-                                            />
-                                        </a>
-
-                                        <a class="popup-image" href="@/assets/imgs/blog-4/gallery/big/gallery-3.png">
-                                            <img
-                                                src="@/assets/imgs/blog-4/gallery/gallery-3.png"
-                                                class="img-fluid"
-                                                alt="image not found"
-                                            />
-                                        </a>
-
-                                        <a class="popup-image" href="@/assets/imgs/blog-4/gallery/big/gallery-4.png">
-                                            <img
-                                                src="@/assets/imgs/blog-4/gallery/gallery-4.png"
-                                                class="img-fluid"
-                                                alt="image not found"
-                                            />
-                                        </a>
-
-                                        <a class="popup-image" href="@/assets/imgs/blog-4/gallery/big/gallery-5.png">
-                                            <img
-                                                src="@/assets/imgs/blog-4/gallery/gallery-5.png"
-                                                class="img-fluid"
-                                                alt="image not found"
-                                            />
-                                        </a>
-
-                                        <a class="popup-image" href="@/assets/imgs/blog-4/gallery/big/gallery-6.png">
-                                            <img
-                                                src="@/assets/imgs/blog-4/gallery/gallery-6.png"
-                                                class="img-fluid"
-                                                alt="image not found"
-                                            />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <div class="sidebar__widget section-bg-2">
-                                <h4 class="sidebar__widget-title">Popular Tags</h4>
-                                <div class="sidebar__widget-tags">
-                                    <div class="tags">
-                                        <a href="blog-details.html">Advice</a>
-                                        <a href="blog-details.html">Author</a>
-                                        <a href="blog-details.html">Consulting</a>
-                                        <a href="blog-details.html">Delish</a>
-                                        <a href="blog-details.html">Family</a>
-                                        <a href="blog-details.html">Health</a>
-                                        <a href="blog-details.html">Tip</a>
-                                        <a href="blog-details.html">Judge</a>
-                                        <a href="blog-details.html">Solution</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <sidebar-section></sidebar-section>
             </div>
         </div>
     </section>
