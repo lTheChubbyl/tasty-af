@@ -1,10 +1,10 @@
-<script>
+<script setup>
 import HomeCounter from "@/components/home/HomeCounter.vue";
 import CategoriesSection from "@/components/home/categories/CategoriesSection.vue";
 import HighlightedSection from "@/components/home/highlighted/HighlightedSection.vue";
 import LatestSection from "@/components/home/latest/LatestSection.vue";
 
-export default {
+defineOptions({
     name: "HomeView",
     components: {
         HomeCounter,
@@ -12,13 +12,7 @@ export default {
         HighlightedSection,
         LatestSection,
     },
-
-    data() {
-        return {
-            counter: 0,
-        };
-    },
-};
+});
 </script>
 
 <template>
