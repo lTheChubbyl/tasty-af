@@ -27,19 +27,6 @@ defineProps({
             <router-link :to="highlighted.link">How Restaurants Foster Connections and Create Memories</router-link>
         </h5>
 
-        <base-button text="Read More" :link="highlighted.link" color="red" hasArrow></base-button>
-
-        <router-link :to="highlighted.link" class="rr-btn rr-btn__red">
-            <span class="hover-rl"></span>
-            <span class="fake_hover"></span>
-            <span class="btn-wrap">
-                <span class="text-one"
-                    >Read More <img src="@/assets/imgs/icon/arrow-right-2.svg" alt="not found"
-                /></span>
-                <span class="text-two"
-                    >Read More <img src="@/assets/imgs/icon/arrow-right-2.svg" alt="not found"
-                /></span>
-            </span>
-        </router-link>
+        <base-button text="Read More" :link="highlighted.link" color="red"></base-button>
     </div>
 </template>

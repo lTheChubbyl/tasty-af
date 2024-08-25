@@ -49,6 +49,47 @@ const latestList = [
         title: "Eco Friendly Practices in the Restaurant Industry",
         commentNum: 4,
     },
+    {
+        link: "/recipes/4",
+        date: {
+            day: "03",
+            month: "Jan",
+        },
+        tags: [
+            { name: "Food", link: "#" },
+            { name: "Restaurant", link: "#" },
+            { name: "Blog", link: "#" },
+        ],
+        title: "Food Trends to Watch in This Year",
+        commentNum: 5,
+    },
+    {
+        link: "/recipes/5",
+        date: {
+            day: "10",
+            month: "Jan",
+        },
+        tags: [
+            { name: "Food", link: "#" },
+            { name: "Restaurant", link: "#" },
+        ],
+        title: "The Rise of Plant-Based Eating",
+        commentNum: 6,
+    },
+    {
+        link: "/recipes/6",
+        date: {
+            day: "15",
+            month: "Jan",
+        },
+        tags: [
+            { name: "Food", link: "#" },
+            { name: "Restaurant", link: "#" },
+            { name: "Blog", link: "#" },
+        ],
+        title: "The Benefits of Eating Seasonally",
+        commentNum: 7,
+    },
 ];
 </script>
 
@@ -60,27 +101,16 @@ const latestList = [
                 <div class="col-xl-6">
                     <div class="section__title-wrapper text-center text-xl-start">
                         <span class="section__subtitle justify-content-start mb-10 mb-xs-5 wow clip-a-z"
-                            >Our Blog Posts</span
+                            >Our collection</span
                         >
-                        <h2 class="section__title mb-0 title-animation">latest news insights</h2>
+                        <h2 class="section__title mb-0 title-animation">Newest recipes</h2>
                     </div>
                 </div>
                 <div class="col-xl-6">
                     <div
                         class="d-flex justify-content-xl-end mt-xs-10 mt-sm-10 mt-md-10 mt-lg-10 justify-content-center"
                     >
-                        <a href="/recipes" class="rr-btn wow clip-a-z mb-15">
-                            <span class="hover-rl"></span>
-                            <span class="fake_hover"></span>
-                            <span class="btn-wrap">
-                                <span class="text-one"
-                                    >View all posts <img src="@/assets/imgs/icon/arrow-right-1.svg" alt="not found"
-                                /></span>
-                                <span class="text-two"
-                                    >View all posts <img src="@/assets/imgs/icon/arrow-right-1.svg" alt="not found"
-                                /></span>
-                            </span>
-                        </a>
+                        <base-button text="View all recipes" link="/recipes" color="black"></base-button>
                     </div>
                 </div>
             </div>
