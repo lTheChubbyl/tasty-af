@@ -28,17 +28,19 @@ const router = createRouter({
         { path: "/contact", name: "contact", component: ContactView },
         { path: "/recipes", name: "recipes", component: RecipesView },
         { path: "/recipes/:id", name: "recipe-detail", component: RecipeDetailView },
-        { path: "/auth", name: "auth", component: UserAuthView },
+        { path: "/auth", name: "auth", component: UserAuthView, meta: { authRequired: false } },
         {
             path: "/profile/:id",
             name: "user-view",
             component: UserView,
             props: true,
+            meta: { authRequired: true },
             children: [
                 {
                     path: "favorites",
                     name: "user-favorites",
                     component: UserFavoritesView,
+                    meta: { authRequired: true },
                 },
             ],
         },
@@ -51,5 +53,15 @@ const router = createRouter({
         return { left: 0, top: 0 };
     },
 });
+
+// router.beforeEach((to, from, next) => {
+//     if (to.meta.authRequired && !authStore.token) {
+//         next("/auth");
+//     } else if (to.meta.authRequired === false && authStore.token) {
+//         next("/profile/1");
+//     } else {
+//         next();
+//     }
+// });
 
 export default router;

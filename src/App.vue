@@ -1,6 +1,9 @@
 <script setup>
 import TheHeader from "@/components/layouts/TheHeader.vue";
 import TheFooter from "@/components/layouts/TheFooter.vue";
+import { onMounted } from "vue";
+import { useAuthStore } from "@/stores/auth.js";
+const authStore = useAuthStore();
 
 defineOptions({
     name: "App",
@@ -8,6 +11,10 @@ defineOptions({
         TheHeader,
         TheFooter,
     },
+});
+
+onMounted(() => {
+    authStore.autoLogin();
 });
 </script>
 

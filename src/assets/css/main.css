@@ -6000,7 +6000,6 @@ a.ui-button:active {
     background-color: transparent;
 }
 .header__logo {
-    max-width: 166px;
 }
 .header__main {
     display: -webkit-box;

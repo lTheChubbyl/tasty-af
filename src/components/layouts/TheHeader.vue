@@ -1,12 +1,18 @@
 <script setup>
 import { useAuthStore } from "@/stores/auth.js";
-// import { ref } from "vue";
+import { useRouter } from "vue-router";
 
 defineOptions({
     name: "TheHeader",
 });
 
 const authStore = useAuthStore();
+const router = useRouter();
+
+const logoutUser = () => {
+    authStore.logoutUser();
+    router.replace("/home");
+};
 </script>
 
 <template>
@@ -43,14 +49,23 @@ const authStore = useAuthStore();
                                             to="/auth"
                                             class="rr-btn-2__header"
                                             :class="{ invisible: authStore.token }"
+                                            v-if="!authStore.token"
                                         >
                                             <span class="hover-rl"></span>
                                             <span class="fake_hover"></span>
                                             <span class="btn-wrap">
-                                                <span class="text-one">Sign Up Now</span>
-                                                <span class="text-two">Sign Up Now</span>
+                                                <span class="text-one">Sign up</span>
+                                                <span class="text-two">Sign up</span>
                                             </span>
                                         </router-link>
+                                        <button class="rr-btn-2__header" @click="logoutUser" v-else>
+                                            <span class="hover-rl"></span>
+                                            <span class="fake_hover"></span>
+                                            <span class="btn-wrap">
+                                                <span class="text-one">Log out</span>
+                                                <span class="text-two">Log out</span>
+                                            </span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

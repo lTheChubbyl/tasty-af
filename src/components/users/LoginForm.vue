@@ -23,7 +23,6 @@ const authStore = useAuthStore();
 
 const loginUser = async () => {
     try {
-        console.log("loginUser from LoginForm", { email: email.value, password: password.value });
         await authStore.loginUser({ email: email.value, password: password.value });
     } catch (error) {
         console.log("Login error: ", error.message);

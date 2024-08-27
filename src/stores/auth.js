@@ -41,10 +41,15 @@ export const useAuthStore = defineStore("auth", () => {
             });
 
             const responseData = response.data;
+            const expirationDate = new Date().getTime() + +responseData.expiresIn * 1000;
+            responseData.expirationDate = expirationDate;
+
+            localStorage.setItem("authData", JSON.stringify(responseData));
+
+            setTimeout(logoutUser, +responseData.expiresIn * 1000);
 
             userId.value = responseData.localId;
             token.value = responseData.idToken;
-            tokenExpiration.value = responseData.expiresIn;
 
             return responseData;
         } catch (error) {
@@ -68,11 +73,24 @@ export const useAuthStore = defineStore("auth", () => {
         );
     };
 
-    // const logoutUser = () => {
-    //     userId.value = null;
-    //     token.value = null;
-    //     tokenExpiration.value = null;
-    // }
+    const autoLogin = () => {
+        const authData = JSON.parse(localStorage.getItem("authData"));
+        const tokenLS = authData?.idToken;
+        const userIdLS = authData?.localId;
+
+        if (tokenLS && userIdLS) {
+            token.value = tokenLS;
+            userId.value = userIdLS;
+        }
+    };
+
+    const logoutUser = () => {
+        localStorage.removeItem("authData");
+
+        userId.value = null;
+        token.value = null;
+        tokenExpiration.value = null;
+    };
 
     return {
         userId,
@@ -80,5 +98,7 @@ export const useAuthStore = defineStore("auth", () => {
         tokenExpiration,
         registerUser,
         loginUser,
+        autoLogin,
+        logoutUser,
     };
 });

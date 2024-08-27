@@ -23,7 +23,6 @@ const authStore = useAuthStore();
 
 const registerUser = async () => {
     try {
-        console.log("registerUser from RegisterForm", { email: email.value, password: password.value });
         await authStore.registerUser({ email: email.value, password: password.value });
     } catch (error) {
         console.log("Registration error: ", error.message);
