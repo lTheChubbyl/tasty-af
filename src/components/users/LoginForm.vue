@@ -1,7 +1,34 @@
 <script setup>
+import { ref } from "vue";
+import { useAuthStore } from "@/stores/auth.js";
+
 defineOptions({
     name: "LoginForm",
 });
+
+const email = ref("");
+const password = ref("");
+const formIsValid = ref(true);
+
+const submitForm = () => {
+    formIsValid.value = true;
+    if (email.value === "" || !email.value.includes("@") || password.value.length < 6) {
+        formIsValid.value = false;
+        return;
+    }
+    loginUser();
+};
+
+const authStore = useAuthStore();
+
+const loginUser = async () => {
+    try {
+        console.log("loginUser from LoginForm", { email: email.value, password: password.value });
+        await authStore.loginUser({ email: email.value, password: password.value });
+    } catch (error) {
+        console.log("Login error: ", error.message);
+    }
+};
 </script>
 
 <template>
@@ -9,13 +36,13 @@ defineOptions({
         <h3 class="text-uppercase fw-bold mb-1">Login</h3>
         <p>Enter your email and password to login into your account.</p>
     </div>
-    <form id="contact-us-message__form" class="contact-us-message__form" method="POST" action="./mail.php">
+    <form id="contact-us-message__form" class="contact-us-message__form" @submit.prevent="submitForm">
         <div class="row">
             <div class="col-12">
                 <div class="contact-us-message__form-input">
                     <div class="validation__wrapper-up position-relative">
                         <i class="fa-light fa-envelope"></i>
-                        <input name="email" id="email" type="email" placeholder="Email Address" />
+                        <input name="email" id="email" type="email" placeholder="Email Address" v-model.trim="email" />
                     </div>
                 </div>
             </div>
@@ -23,10 +50,18 @@ defineOptions({
                 <div class="contact-us-message__form-input">
                     <div class="validation__wrapper-up position-relative">
                         <i class="fa-light fa-lock-keyhole"></i>
-                        <input name="password" id="password" type="password" placeholder="Password" />
+                        <input
+                            name="password"
+                            id="password"
+                            type="password"
+                            placeholder="Password"
+                            v-model.trim="password"
+                        />
                     </div>
                 </div>
             </div>
+
+            <p v-if="!formIsValid">Please fill in all fields correctly.</p>
 
             <!-- <p>Forgot Password?</p> -->
 

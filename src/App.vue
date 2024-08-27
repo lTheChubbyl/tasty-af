@@ -14,11 +14,7 @@ defineOptions({
 <template>
     <TheHeader />
 
-    <router-view v-slot="slotProps">
-        <transition name="route">
-            <component :is="slotProps.Component"></component>
-        </transition>
-    </router-view>
+    <router-view></router-view>
 
     <TheFooter />
 </template>

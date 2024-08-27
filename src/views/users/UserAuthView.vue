@@ -12,12 +12,12 @@ defineOptions({
     },
 });
 
-const hasAccount = ref(false);
+const mode = ref("login");
 </script>
 
 <template>
     <base-half-hero
-        v-if="hasAccount"
+        v-if="mode === 'register'"
         title="Register page"
         page="Auth"
         image="@/assets/imgs/cta-2/cta.jpg"
@@ -34,13 +34,15 @@ const hasAccount = ref(false);
             <div class="row">
                 <div class="col-12 d-flex justify-content-center">
                     <div class="opening-time__content wow clip-a-z text-center">
-                        <register-form v-if="hasAccount"></register-form>
+                        <register-form v-if="mode === 'register'"></register-form>
                         <login-form v-else></login-form>
                         <div class="col-12">
-                            {{ hasAccount ? "Already have an account?" : "Dont have an account?" }}
-                            <router-link to="/auth" @click.prevent="hasAccount = !hasAccount">{{
-                                hasAccount ? "Login instead" : "Register instead"
-                            }}</router-link>
+                            {{ mode === "register" ? "Already have an account?" : "Dont have an account?" }}
+                            <router-link
+                                to="/auth"
+                                @click.prevent="mode = mode === 'register' ? 'login' : 'register'"
+                                >{{ mode === "register" ? "Login instead" : "Register instead" }}</router-link
+                            >
                         </div>
                     </div>
                 </div>
