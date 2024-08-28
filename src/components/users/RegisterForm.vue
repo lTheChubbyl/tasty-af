@@ -10,11 +10,21 @@ const email = ref("");
 const password = ref("");
 const firstName = ref("");
 const lastName = ref("");
+const confirmPassword = ref("");
 const formIsValid = ref(true);
 
+const nameRegex = /^[a-zA-ZÀ-ÿ\s'-]+$/;
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const passwordRegex = /^(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+
 const submitForm = () => {
-    formIsValid.value = true;
-    if (email.value === "" || !email.value.includes("@") || password.value.length < 6) {
+    if (
+        !emailRegex.test(email.value) ||
+        !passwordRegex.test(password.value) ||
+        !nameRegex.test(firstName.value) ||
+        !nameRegex.test(lastName.value) ||
+        password.value !== confirmPassword.value
+    ) {
         formIsValid.value = false;
         return;
     }
@@ -53,8 +63,10 @@ const registerUser = async () => {
                             id="firstName"
                             type="text"
                             placeholder="First Name"
+                            :class="[firstNameIsValid || formIsValid ? 'is-valid' : 'is-invalid']"
                             v-model.trim="firstName"
                         />
+                        <div class="invalid-feedback mt-3">Please enter a valid name.</div>
                     </div>
                 </div>
             </div>
@@ -67,8 +79,10 @@ const registerUser = async () => {
                             id="lastName"
                             type="text"
                             placeholder="Last Name"
+                            :class="[lastNameIsValid || formIsValid ? 'is-valid' : 'is-invalid']"
                             v-model.trim="lastName"
                         />
+                        <div class="invalid-feedback mt-3">Please enter a valid name.</div>
                     </div>
                 </div>
             </div>
@@ -76,7 +90,15 @@ const registerUser = async () => {
                 <div class="contact-us-message__form-input">
                     <div class="validation__wrapper-up position-relative">
                         <i class="fa-light fa-envelope"></i>
-                        <input name="email" id="email" type="email" placeholder="Email Address" v-model.trim="email" />
+                        <input
+                            name="email"
+                            id="email"
+                            type="email"
+                            placeholder="Email Address"
+                            :class="[emailIsValid || formIsValid ? 'is-valid' : 'is-invalid']"
+                            v-model.trim="email"
+                        />
+                        <div class="invalid-feedback mt-3">Please enter a valid email.</div>
                     </div>
                 </div>
             </div>
@@ -89,12 +111,16 @@ const registerUser = async () => {
                             id="password"
                             type="password"
                             placeholder="Password"
+                            :class="[passwordIsValid || formIsValid ? 'is-valid' : 'is-invalid']"
                             v-model.trim="password"
                         />
+                        <div class="invalid-feedback mt-3">
+                            At least 6 characters long and include a digit and a special character.
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-12">
+            <div class="col-12">
                 <div class="contact-us-message__form-input">
                     <div class="validation__wrapper-up position-relative">
                         <i class="fa-sharp fa-light fa-circle-check"></i>
@@ -103,13 +129,13 @@ const registerUser = async () => {
                             id="confirmPassword"
                             type="password"
                             placeholder="Confirm Password"
+                            :class="[confirmPasswordIsValid || formIsValid ? 'is-valid' : 'is-invalid']"
                             v-model.trim="confirmPassword"
                         />
+                        <div class="invalid-feedback mt-3">Please enter a matching password.</div>
                     </div>
                 </div>
-            </div> -->
-
-            <p v-if="!formIsValid">Please fill in all fields correctly.</p>
+            </div>
 
             <div class="col-12 mb-50">
                 <button type="submit" class="rr-btn-solid">

@@ -28,7 +28,7 @@ const router = createRouter({
         { path: "/contact", name: "contact", component: ContactView },
         { path: "/recipes", name: "recipes", component: RecipesView },
         { path: "/recipes/:id", name: "recipe-detail", component: RecipeDetailView },
-        { path: "/auth", name: "auth", component: UserAuthView, meta: { authRequired: false } },
+        { path: "/auth/:mode?", name: "auth", component: UserAuthView, meta: { authRequired: false } },
         {
             path: "/profile/:id",
             name: "user-view",

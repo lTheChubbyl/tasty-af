@@ -15,7 +15,8 @@ export const useAuthStore = defineStore("auth", () => {
     const authRequest = async (url, payload, mode) => {
         try {
             const response = await axios.post(url, {
-                ...payload,
+                email: payload.email,
+                password: payload.password,
                 returnSecureToken: true,
             });
 
@@ -23,8 +24,6 @@ export const useAuthStore = defineStore("auth", () => {
             const expiresIn = +responseData.expiresIn * 1000;
             const expirationDate = new Date().getTime() + expiresIn;
             responseData.expirationDate = expirationDate;
-
-            localStorage.setItem("authData", JSON.stringify(responseData));
 
             timer = setTimeout(logoutUser, expiresIn);
             userId.value = responseData.localId;
@@ -36,8 +35,8 @@ export const useAuthStore = defineStore("auth", () => {
                         firstName: payload.firstName,
                         lastName: payload.lastName,
                     };
-                    await axios.post(
-                        `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/users/${userId.value}.json`,
+                    await axios.put(
+                        `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/users/${userId.value}.json?auth=${token.value}`,
                         userData
                     );
                 } catch (error) {
@@ -45,10 +44,9 @@ export const useAuthStore = defineStore("auth", () => {
                 }
             }
 
-            getUserData().then(() => {
-                console.log(user.value.firstName);
-                console.log(user.value.lastName);
-            });
+            await getUserData();
+            responseData.user = user.value;
+            localStorage.setItem("authData", JSON.stringify(responseData));
 
             router.replace("/home");
 
