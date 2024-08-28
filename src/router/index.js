@@ -44,7 +44,7 @@ const router = createRouter({
                 },
             ],
         },
-        { path: "/:notFound(.*)", component: NotFound },
+        { path: "/:notFound(.*)", name: "not-found", component: NotFound },
     ],
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
@@ -54,14 +54,23 @@ const router = createRouter({
     },
 });
 
-// router.beforeEach((to, from, next) => {
-//     if (to.meta.authRequired && !authStore.token) {
-//         next("/auth");
-//     } else if (to.meta.authRequired === false && authStore.token) {
-//         next("/profile/1");
-//     } else {
-//         next();
-//     }
-// });
+router.beforeEach((to, from, next) => {
+    console.log("Checking route meta and auth data");
+    console.log("Auth Required:", to.meta.authRequired);
+    console.log("Auth Permitted:", to.meta.authPermitted);
+    console.log("Auth Data:", localStorage.getItem("authData"));
+    console.log("Current Route:", to.name);
+
+    if (to.meta.authRequired && !localStorage.getItem("authData")) {
+        console.log("auth");
+        next("/auth");
+    } else if (to.meta.authRequired === false && localStorage.getItem("authData")) {
+        console.log("profile");
+        next("/profile/1");
+    } else {
+        console.log("next");
+        next();
+    }
+});
 
 export default router;

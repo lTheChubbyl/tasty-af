@@ -8,6 +8,8 @@ defineOptions({
 
 const email = ref("");
 const password = ref("");
+const firstName = ref("");
+const lastName = ref("");
 const formIsValid = ref(true);
 
 const submitForm = () => {
@@ -23,7 +25,12 @@ const authStore = useAuthStore();
 
 const registerUser = async () => {
     try {
-        await authStore.registerUser({ email: email.value, password: password.value });
+        await authStore.registerUser({
+            firstName: firstName.value,
+            lastName: lastName.value,
+            email: email.value,
+            password: password.value,
+        });
     } catch (error) {
         console.log("Registration error: ", error.message);
     }
@@ -37,7 +44,7 @@ const registerUser = async () => {
     </div>
     <form id="contact-us-message__form" class="contact-us-message__form" @submit.prevent="submitForm">
         <div class="row">
-            <!-- <div class="col-12">
+            <div class="col-12">
                 <div class="contact-us-message__form-input">
                     <div class="validation__wrapper-up position-relative">
                         <i class="fa-light fa-user"></i>
@@ -47,8 +54,6 @@ const registerUser = async () => {
                             type="text"
                             placeholder="First Name"
                             v-model.trim="firstName"
-                            readonly
-                            disabled
                         />
                     </div>
                 </div>
@@ -63,12 +68,10 @@ const registerUser = async () => {
                             type="text"
                             placeholder="Last Name"
                             v-model.trim="lastName"
-                            readonly
-                            disabled
                         />
                     </div>
                 </div>
-            </div> -->
+            </div>
             <div class="col-12">
                 <div class="contact-us-message__form-input">
                     <div class="validation__wrapper-up position-relative">

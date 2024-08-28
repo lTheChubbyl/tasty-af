@@ -1,17 +1,14 @@
 <script setup>
 import { useAuthStore } from "@/stores/auth.js";
-import { useRouter } from "vue-router";
 
 defineOptions({
     name: "TheHeader",
 });
 
 const authStore = useAuthStore();
-const router = useRouter();
 
 const logoutUser = () => {
     authStore.logoutUser();
-    router.replace("/home");
 };
 </script>
 
@@ -45,12 +42,7 @@ const logoutUser = () => {
                             <div class="header__right d-none d-sm-inline-flex">
                                 <div class="header__action d-flex align-items-center">
                                     <div class="header__btn-wrap">
-                                        <router-link
-                                            to="/auth"
-                                            class="rr-btn-2__header"
-                                            :class="{ invisible: authStore.token }"
-                                            v-if="!authStore.token"
-                                        >
+                                        <router-link to="/auth" class="rr-btn-2__header" v-if="!authStore.token">
                                             <span class="hover-rl"></span>
                                             <span class="fake_hover"></span>
                                             <span class="btn-wrap">
@@ -123,7 +115,7 @@ const logoutUser = () => {
                                         </button>
                                     </li>
                                     <li>
-                                        <router-link :to="!authStore.token ? '/auth' : '/profile/1'">
+                                        <router-link to="/auth">
                                             <i class="fa-regular fa-circle-user text-white fs-2"></i>
                                         </router-link>
                                     </li>

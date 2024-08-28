@@ -1,39 +1,18 @@
-import { ref } from "vue";
 import { defineStore } from "pinia";
+import { useRouter } from "vue-router";
+import { ref } from "vue";
 import axios from "axios";
 
+let timer;
+
 export const useAuthStore = defineStore("auth", () => {
+    const router = useRouter();
     const userId = ref(null);
     const token = ref(null);
     const tokenExpiration = ref(null);
+    const user = ref(null);
 
-    // const registerUser = async (payload) => {
-    //     console.log("registerUser from auth.js", payload);
-    //     const response = await fetch(
-    //         "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAlWuVkQsQdLQj9niDYWAEHZRgfSQd8vrs",
-    //         {
-    //             method: "POST",
-    //             body: JSON.stringify({
-    //                 email: payload.email,
-    //                 password: payload.password,
-    //                 returnSecureToken: true,
-    //             }),
-    //         }
-    //     );
-    //     const responseData = await response.json();
-    //     console.log(responseData);
-
-    //     if (!response.ok) {
-    //         const error = new Error(responseData.message || "Failed to sign up.");
-    //         throw error;
-    //     }
-
-    //     userId.value = responseData.localId;
-    //     token.value = responseData.idToken;
-    //     tokenExpiration.value = responseData.expiresIn;
-    // };
-
-    const authRequest = async (url, payload) => {
+    const authRequest = async (url, payload, mode) => {
         try {
             const response = await axios.post(url, {
                 ...payload,
@@ -41,15 +20,37 @@ export const useAuthStore = defineStore("auth", () => {
             });
 
             const responseData = response.data;
-            const expirationDate = new Date().getTime() + +responseData.expiresIn * 1000;
+            const expiresIn = +responseData.expiresIn * 1000;
+            const expirationDate = new Date().getTime() + expiresIn;
             responseData.expirationDate = expirationDate;
 
             localStorage.setItem("authData", JSON.stringify(responseData));
 
-            setTimeout(logoutUser, +responseData.expiresIn * 1000);
-
+            timer = setTimeout(logoutUser, expiresIn);
             userId.value = responseData.localId;
             token.value = responseData.idToken;
+
+            if (mode === "register") {
+                try {
+                    const userData = {
+                        firstName: payload.firstName,
+                        lastName: payload.lastName,
+                    };
+                    await axios.post(
+                        `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/users/${userId.value}.json`,
+                        userData
+                    );
+                } catch (error) {
+                    console.log("Error during user data registration: ", error.message);
+                }
+            }
+
+            getUserData().then(() => {
+                console.log(user.value.firstName);
+                console.log(user.value.lastName);
+            });
+
+            router.replace("/home");
 
             return responseData;
         } catch (error) {
@@ -62,14 +63,16 @@ export const useAuthStore = defineStore("auth", () => {
     const registerUser = async (payload) => {
         return await authRequest(
             "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAlWuVkQsQdLQj9niDYWAEHZRgfSQd8vrs",
-            payload
+            payload,
+            "register"
         );
     };
 
     const loginUser = async (payload) => {
         return await authRequest(
             "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAlWuVkQsQdLQj9niDYWAEHZRgfSQd8vrs",
-            payload
+            payload,
+            "login"
         );
     };
 
@@ -77,6 +80,15 @@ export const useAuthStore = defineStore("auth", () => {
         const authData = JSON.parse(localStorage.getItem("authData"));
         const tokenLS = authData?.idToken;
         const userIdLS = authData?.localId;
+        const expirationLS = authData?.expirationDate;
+
+        const expiresIn = +expirationLS - new Date().getTime();
+
+        if (!expiresIn || expiresIn < 0) {
+            return;
+        }
+
+        timer = setTimeout(logoutUser, expiresIn);
 
         if (tokenLS && userIdLS) {
             token.value = tokenLS;
@@ -89,7 +101,20 @@ export const useAuthStore = defineStore("auth", () => {
 
         userId.value = null;
         token.value = null;
-        tokenExpiration.value = null;
+
+        clearTimeout(timer);
+        router.replace("/home");
+    };
+
+    const getUserData = async () => {
+        try {
+            const response = await axios.get(
+                `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/users/${userId.value}.json?auth=${token.value}`
+            );
+            user.value = response.data;
+        } catch (error) {
+            console.log("Error during user data request: ", error.message);
+        }
     };
 
     return {
