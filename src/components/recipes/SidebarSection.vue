@@ -21,7 +21,7 @@ defineOptions({
 
                 <sidebar-categories></sidebar-categories>
 
-                <sidebar-tags></sidebar-tags>
+                <!-- <sidebar-tags></sidebar-tags> -->
             </div>
         </div>
     </div>

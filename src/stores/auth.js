@@ -48,7 +48,7 @@ export const useAuthStore = defineStore("auth", () => {
             responseData.user = user.value;
             localStorage.setItem("authData", JSON.stringify(responseData));
 
-            router.replace("/home");
+            router.back();
 
             return responseData;
         } catch (error) {

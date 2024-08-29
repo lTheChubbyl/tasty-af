@@ -9,7 +9,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="comment-item d-flex" :class="{ 'comment-item__reply': comment.isReply }">
+    <div class="comment-item d-flex">
         <div class="comment-item__media">
             <img src="@/assets/imgs/blog-details/author-1.png" class="img-fluid" alt="image not found" />
         </div>
@@ -20,14 +20,8 @@ defineProps({
                     <span class="date">{{ comment.date }}</span>
                     <h5 class="name">{{ comment.author }}</h5>
                 </div>
-                <div class="comment-item__header-right">
-                    <button>
-                        Reply
-                        <img src="@/assets/imgs/icon/angle-trun-left.svg" alt="icon not found" />
-                    </button>
-                </div>
             </div>
-            <p class="mb-0">{{ comment.content }}</p>
+            <p class="mb-0">{{ comment.text }}</p>
         </div>
     </div>
 </template>

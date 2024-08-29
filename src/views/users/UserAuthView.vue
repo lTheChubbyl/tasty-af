@@ -25,7 +25,6 @@ const mode = ref("login");
 
     <base-half-hero v-else title="Login page" page="Auth" image="@/assets/imgs/cta-2/cta.jpg"></base-half-hero>
 
-    <!-- opening-time area start -->
     <section
         class="opening-time opening-time__bottom opening-time__background opening-time__space section-bg-3"
         data-background="assets/imgs/opening-time/bg.png"
@@ -49,5 +48,4 @@ const mode = ref("login");
             </div>
         </div>
     </section>
-    <!-- opening-time area end -->
 </template>

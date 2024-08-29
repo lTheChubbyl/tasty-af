@@ -8879,7 +8879,6 @@ a.ui-button:active {
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
-    line-height: 23px;
     color: var(--rr-theme-secondary);
 }
 .blog__details-bottom-tags {
@@ -8897,7 +8896,6 @@ a.ui-button:active {
     gap: 12px;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
 }
 .blog__details-bottom-tags_wapper span {
     font-family: var(--rr-ff-jost);
@@ -9758,7 +9756,7 @@ a.ui-button:active {
     flex-wrap: wrap;
     position: absolute;
 }
-.blog-4__item-tag li a {
+.blog-4__item-tag li p {
     padding: 5px 17px;
     -webkit-box-align: center;
     -ms-flex-align: center;
