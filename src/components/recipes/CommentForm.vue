@@ -34,7 +34,7 @@ const recipesStore = useRecipesStore();
 
 const submitComment = () => {
     formIsValid.value = true;
-    if (text.value.trim() === "" || text.value.length < 10) {
+    if (text.value.trim() === "" || text.value.length < 3) {
         formIsValid.value = false;
         return;
     }
@@ -90,7 +90,7 @@ const submitComment = () => {
                     </div>
                 </div>
                 <div class="col-12 text-center" v-if="!formIsValid">
-                    <p class="not-valid">Please enter a valid comment with at least 10 characters.</p>
+                    <p class="not-valid">Please enter a valid comment.</p>
                 </div>
 
                 <div class="col-12">
