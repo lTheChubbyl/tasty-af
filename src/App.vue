@@ -15,6 +15,7 @@ defineOptions({
 
 onMounted(() => {
     authStore.autoLogin();
+    console.log("app");
 });
 </script>
 

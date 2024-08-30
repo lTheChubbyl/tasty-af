@@ -17,7 +17,6 @@ defineOptions({
 
 <template>
     <main>
-        <!-- Banner 2 area start -->
         <section class="banner-2 banner-2__space overflow-hidden">
             <div class="container">
                 <div class="row g-24">
@@ -30,41 +29,25 @@ defineOptions({
                             <p class="mb-45 mb-sm-40 mb-xs-35">
                                 Whip up something fire &#x1F525; with our top trending dishes!
                             </p>
-
-                            <!-- <a href="reservation.html" class="rr-btn-2 wow clip-a-z">
-                                <span class="hover-rl"></span>
-                                <span class="fake_hover"></span>
-                                <span class="btn-wrap">
-                                    <span class="text-one"
-                                        >Get Cookin'<img src="@/assets/imgs/icon/arrow-right.svg" alt="not found"
-                                    /></span>
-                                    <span class="text-two"
-                                        >Get Cookin'<img src="@/assets/imgs/icon/arrow-right.svg" alt="not found"
-                                    /></span>
-                                </span>
-                            </a> -->
                             <base-button text="Get Cookin'" link="/recipes" color="mix"></base-button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Banner 2 area end -->
 
         <categories-section></categories-section>
 
-        <!-- experience area start -->
         <div class="experience experience__background experience__space experience__bottom-up overflow-hidden">
-            <!-- /our-project active with 'experience__bottom-up' -->
             <div class="container">
                 <div class="row g-24">
                     <div class="col-12">
                         <div class="experience__item-wrapper">
-                            <home-counter :startCount="0" :endCount="70" text="Recipes That Slap"></home-counter>
+                            <home-counter :endCount="20" text="Recipes That Slap"></home-counter>
 
-                            <home-counter :startCount="0" :endCount="40" text="Foodie Followers"></home-counter>
+                            <home-counter :endCount="45" text="Foodie Followers"></home-counter>
 
-                            <home-counter :startCount="0" :endCount="20" text="Chefs On Fire"></home-counter>
+                            <home-counter :endCount="8" text="Chefs On Fire"></home-counter>
 
                             <home-counter notCounter text="Vibes In the Kitchen"></home-counter>
                         </div>
@@ -72,14 +55,12 @@ defineOptions({
                 </div>
             </div>
         </div>
-        <!-- experience area start -->
 
         <highlighted-section></highlighted-section>
 
         <latest-section></latest-section>
 
-        <!-- cta area start -->
-        <section class="cta-2" data-background="@/assets/imgs/cta-2/cta.jpg">
+        <section class="cta-2">
             <div class="container">
                 <div class="row g-24">
                     <div class="col-12">
@@ -96,6 +77,5 @@ defineOptions({
                 </div>
             </div>
         </section>
-        <!-- cta area start -->
     </main>
 </template>

@@ -7534,6 +7534,7 @@ a.ui-button:active {
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
+    background-image: url("@/assets/imgs/cta-bottom.png");
 }
 .cta-2::before {
     content: "";

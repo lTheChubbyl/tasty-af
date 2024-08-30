@@ -1,6 +1,7 @@
 <script setup>
 import HighlightedImage from "./HighlightedImage.vue";
 import HighlightedDescription from "./HighlightedDescription.vue";
+import { useRecipesStore } from "@/stores/recipes";
 
 defineOptions({
     name: "HighlightedSection",
@@ -10,26 +11,8 @@ defineOptions({
     },
 });
 
-const highlightedList = [
-    {
-        date: {
-            day: "09",
-            month: "Dec",
-        },
-        link: "/recipes/1",
-        author: "John Smith",
-        commentsNum: 3,
-    },
-    {
-        date: {
-            day: "17",
-            month: "Dec",
-        },
-        link: "/recipes/2",
-        author: "Jane Smith",
-        commentsNum: 4,
-    },
-];
+const recipesStore = useRecipesStore();
+const highlightedList = recipesStore.recipesArray.slice(0, 2);
 </script>
 
 <template>

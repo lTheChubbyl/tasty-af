@@ -39,10 +39,8 @@ setInterval(() => {
     <div class="experience__item">
         <p>
             <span v-if="notCounter" class="odometer"><i class="fa-solid fa-infinity"></i></span>
-            <span v-else class="odometer" :data-count="endCount">{{ count }}</span>
+            <span v-else class="odometer" :data-count="endCount">{{ count }}k+</span>
             <span v-html="formattedText"></span>
         </p>
     </div>
 </template>
-
-<style scoped></style>

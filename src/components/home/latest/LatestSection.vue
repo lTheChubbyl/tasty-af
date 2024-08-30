@@ -1,5 +1,6 @@
 <script setup>
 import LatestPart from "./LatestPart.vue";
+import { useRecipesStore } from "@/stores/recipes";
 
 defineOptions({
     name: "LatestSection",
@@ -8,89 +9,8 @@ defineOptions({
     },
 });
 
-const latestList = [
-    {
-        link: "/recipes/1",
-        date: {
-            day: "20",
-            month: "Feb",
-        },
-        tags: [
-            { name: "Food", link: "#" },
-            { name: "Blog", link: "#" },
-        ],
-        title: "How Modern Restaurants Are Redefining Culinary",
-        commentNum: 2,
-    },
-    {
-        link: "/recipes/2",
-        date: {
-            day: "27",
-            month: "Nov",
-        },
-        tags: [
-            { name: "Food", link: "#" },
-            { name: "Restaurant", link: "#" },
-        ],
-        title: "The Restaurants from Humble Beginnings to Local",
-        commentNum: 3,
-    },
-    {
-        link: "/recipes/3",
-        date: {
-            day: "31",
-            month: "Dec",
-        },
-        tags: [
-            { name: "Food", link: "#" },
-            { name: "Restaurant", link: "#" },
-            { name: "Blog", link: "#" },
-        ],
-        title: "Eco Friendly Practices in the Restaurant Industry",
-        commentNum: 4,
-    },
-    {
-        link: "/recipes/4",
-        date: {
-            day: "03",
-            month: "Jan",
-        },
-        tags: [
-            { name: "Food", link: "#" },
-            { name: "Restaurant", link: "#" },
-            { name: "Blog", link: "#" },
-        ],
-        title: "Food Trends to Watch in This Year",
-        commentNum: 5,
-    },
-    {
-        link: "/recipes/5",
-        date: {
-            day: "10",
-            month: "Jan",
-        },
-        tags: [
-            { name: "Food", link: "#" },
-            { name: "Restaurant", link: "#" },
-        ],
-        title: "The Rise of Plant-Based Eating",
-        commentNum: 6,
-    },
-    {
-        link: "/recipes/6",
-        date: {
-            day: "15",
-            month: "Jan",
-        },
-        tags: [
-            { name: "Food", link: "#" },
-            { name: "Restaurant", link: "#" },
-            { name: "Blog", link: "#" },
-        ],
-        title: "The Benefits of Eating Seasonally",
-        commentNum: 7,
-    },
-];
+const recipesStore = useRecipesStore();
+const latestList = recipesStore.recipesArray.slice(0, 6);
 </script>
 
 <template>
@@ -103,7 +23,7 @@ const latestList = [
                         <span class="section__subtitle justify-content-start mb-10 mb-xs-5 wow clip-a-z"
                             >Our collection</span
                         >
-                        <h2 class="section__title mb-0 title-animation">Newest recipes</h2>
+                        <h2 class="section__title mb-0 title-animation">Latest additions</h2>
                     </div>
                 </div>
                 <div class="col-xl-6">
@@ -116,139 +36,6 @@ const latestList = [
             </div>
 
             <div class="row g-24 mb-minus-24">
-                <!-- <div class="col-xl-4 col-md-6">
-                    <div class="blog__item mb-24">
-                        <div class="blog__item-media">
-                            <a href="blog-details.html">
-                                <img src="../assets/imgs/blog/blog-1.png" class="img-fluid" alt="image not found" />
-                            </a>
-                            <div class="blog__item-date">20 <span>Feb</span></div>
-                        </div>
-
-                        <div class="blog__item-content">
-                            <div class="blog__item-content__top">
-                                <div class="blog__item-meta-tags d-flex flex-wrap">
-                                    <a href="blog-details.html">Food Menu</a>
-                                    <a href="blog-details.html">Food Menu</a>
-                                </div>
-                                <h6 class="mt-15">
-                                    <a href="blog-details.html">How Modern Restaurants Are Redefining Culinary</a>
-                                </h6>
-                            </div>
-                            <div class="blog__item-content__bottom">
-                                <div class="blog__item-content__bottom-text">
-                                    <a href="blog-details.html"
-                                        ><img src="../assets/imgs/blog/comment.png" alt="not found" />
-                                        <span>02 Comments</span></a
-                                    >
-                                </div>
-                                <a href="blog-details.html" class="blog__item-content__bottom-readmore">
-                                    <svg
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 18 18"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M6.5 1C7.7 1 14 1 17 1M17 1V10.5M17 1L1 17"
-                                            stroke="#74787C"
-                                            stroke-width="2"
-                                        />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="blog__item mb-24">
-                        <div class="blog__item-media">
-                            <a href="blog-details.html">
-                                <img src="../assets/imgs/blog/blog-2.png" class="img-fluid" alt="image not found" />
-                            </a>
-                            <div class="blog__item-date">27 <span>Nov</span></div>
-                        </div>
-
-                        <div class="blog__item-content">
-                            <div class="blog__item-content__top">
-                                <div class="blog__item-meta-tags d-flex flex-wrap">
-                                    <a href="blog-details.html">Food Menu</a>
-                                </div>
-                                <h6 class="mt-15">
-                                    <a href="blog-details.html">The Restaurants from Humble Beginnings to Local</a>
-                                </h6>
-                            </div>
-                            <div class="blog__item-content__bottom">
-                                <div class="blog__item-content__bottom-text">
-                                    <a href="blog-details.html"
-                                        ><img src="../assets/imgs/blog/comment.png" alt="not found" />
-                                        <span>12 Comments</span></a
-                                    >
-                                </div>
-                                <a href="blog-details.html" class="blog__item-content__bottom-readmore">
-                                    <svg
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 18 18"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M6.5 1C7.7 1 14 1 17 1M17 1V10.5M17 1L1 17"
-                                            stroke="#74787C"
-                                            stroke-width="2"
-                                        />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="blog__item mb-24">
-                        <div class="blog__item-media">
-                            <a href="blog-details.html">
-                                <img src="../assets/imgs/blog/blog-3.png" class="img-fluid" alt="image not found" />
-                            </a>
-                            <div class="blog__item-date">31 <span>Dec</span></div>
-                        </div>
-
-                        <div class="blog__item-content">
-                            <div class="blog__item-content__top">
-                                <div class="blog__item-meta-tags d-flex flex-wrap">
-                                    <a href="blog-details.html">Food Menu</a>
-                                </div>
-                                <h6 class="mt-15">
-                                    <a href="blog-details.html">Eco Friendly Practices in the Restaurant Industry</a>
-                                </h6>
-                            </div>
-                            <div class="blog__item-content__bottom">
-                                <div class="blog__item-content__bottom-text">
-                                    <a href="blog-details.html"
-                                        ><img src="../assets/imgs/blog/comment.png" alt="not found" />
-                                        <span>12 Comments</span></a
-                                    >
-                                </div>
-                                <a href="blog-details.html" class="blog__item-content__bottom-readmore">
-                                    <svg
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 18 18"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M6.5 1C7.7 1 14 1 17 1M17 1V10.5M17 1L1 17"
-                                            stroke="#74787C"
-                                            stroke-width="2"
-                                        />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
                 <latest-part v-for="latest in latestList" :key="latest.id" :latest="latest"></latest-part>
             </div>
         </div>

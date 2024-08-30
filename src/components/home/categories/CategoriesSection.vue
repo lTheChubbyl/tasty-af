@@ -12,32 +12,31 @@ const categoryList = [
     {
         categoryId: 1,
         categoryLink: "/recipes?category=1",
-        categoryImg: "our-service-1.jpg",
+        categoryImg: "breakfast.jpg",
         categoryName: "Breakfast",
     },
     {
         categoryId: 2,
         categoryLink: "/recipes?category=2",
-        categoryImg: "our-service-2.jpg",
+        categoryImg: "lunch.jpg",
         categoryName: "Lunch",
     },
     {
         categoryId: 3,
         categoryLink: "/recipes?category=3",
-        categoryImg: "our-service-3.jpg",
+        categoryImg: "dinner.jpg",
         categoryName: "Dinner",
     },
     {
         categoryId: 4,
         categoryLink: "/recipes?category=4",
-        categoryImg: "our-service-4.jpg",
-        categoryName: "Desserts",
+        categoryImg: "dessert.jpg",
+        categoryName: "Dessert",
     },
 ];
 </script>
 
 <template>
-    <!-- our-service-2 area start -->
     <section class="our-service-2 section-space">
         <div class="container">
             <div class="row g-24">
@@ -63,5 +62,4 @@ const categoryList = [
             </div>
         </div>
     </section>
-    <!-- our-service-2 area end -->
 </template>
