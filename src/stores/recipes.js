@@ -4,6 +4,8 @@ import axios from "axios";
 
 export const useRecipesStore = defineStore("recipes", () => {
     const recipesArray = ref([]);
+    const token = ref("");
+    const userId = ref("");
 
     recipesArray.value = [
         {
@@ -2355,34 +2357,25 @@ export const useRecipesStore = defineStore("recipes", () => {
         },
     ];
 
-    // const getRecipes = async () => {
-    //     try {
-    //         const response = await axios.get(
-    //             "https://api.spoonacular.com/recipes/random?apiKey=e0c1a4d8c8d94d5f9b5b0e7e5b5f4e0e&number=5&tags=dinner"
-    //         );
-    //         for (const key in response.data) {
-    //             const recipe = {
-    //                 id: key,
-    //                 ...response.data[key],
-    //             };
-    //             recipesArray.value.push(recipe);
-    //         }
-    //         return recipesArray;
-    //     } catch (error) {
-    //         console.log("Error during recipes list request: ", error.message);
-    //     }
-    // };
-
-    const addRecipeComment = async (payload) => {
-        const token = JSON.parse(localStorage.getItem("authData")).idToken;
-        try {
-            const response = await axios.post(
-                `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/recipes/${payload.recipeId}/comments.json?auth=${token}`,
-                { author: payload.author, date: payload.date, text: payload.text }
-            );
-            return response.data;
-        } catch (error) {
-            console.log("Error during comment add request: ", error.message);
+    const getRecipes = async () => {
+        if (recipesArray.value.length === 0) {
+            try {
+                const response = await axios.get(
+                    "https://api.spoonacular.com/recipes/random?apiKey=603cdf5c46c24761820eaed747f75fbf&number=5"
+                );
+                for (const key in response.data.recipes) {
+                    const recipe = {
+                        id: key,
+                        ...response.data.recipes[key],
+                    };
+                    recipesArray.value.push(recipe);
+                }
+                return recipesArray;
+            } catch (error) {
+                console.log("Error during recipes list request: ", error.message);
+            }
+        } else {
+            return recipesArray;
         }
     };
 
@@ -2405,10 +2398,38 @@ export const useRecipesStore = defineStore("recipes", () => {
         }
     };
 
+    const addRecipeComment = async (payload) => {
+        try {
+            token.value = JSON.parse(localStorage.getItem("authData")).idToken;
+
+            const response = await axios.post(
+                `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/recipes/${payload.recipeId}/comments.json?auth=${token.value}`,
+                { userId: userId, author: payload.author, date: payload.date, text: payload.text }
+            );
+            return response.data;
+        } catch (error) {
+            console.log("Error during comment add request: ", error.message);
+        }
+    };
+
+    const deleteRecipeComment = async (recipeId, commentId) => {
+        token.value = JSON.parse(localStorage.getItem("authData")).idToken;
+        userId.value = JSON.parse(localStorage.getItem("authData")).localId;
+        try {
+            const response = await axios.delete(
+                `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/recipes/${recipeId}/comments/${commentId}.json`
+            );
+            return response.data;
+        } catch (error) {
+            console.log("Error during comment delete request: ", error.message);
+        }
+    };
+
     return {
         recipesArray,
-        // getRecipes,
+        getRecipes,
         getRecipeComments,
         addRecipeComment,
+        deleteRecipeComment,
     };
 });

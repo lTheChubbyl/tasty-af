@@ -12,54 +12,50 @@
     -----------------------------------------------------------------------------------
 
      */
-   /*======================================
+    /*======================================
    Data Css js
    ========================================*/
-    $("[data-background]").each(function() {
-        $(this).css(
-            "background-image",
-            "url( " + $(this).attr("data-background") + "  )"
-        );
+    $("[data-background]").each(function () {
+        $(this).css("background-image", "url( " + $(this).attr("data-background") + "  )");
     });
 
-    $("[data-width]").each(function() {
+    $("[data-width]").each(function () {
         $(this).css("width", $(this).attr("data-width"));
     });
 
     // prelaoder
-    let span = $('.letter'),
-        tlSmell = new TimelineMax({repeat : -1});
-    tlSmell
-        .staggerFromTo($('svg .smell'), 3, {y: 50, autoAlpha: 0.5}, {y: -20, autoAlpha: 1}, 1);
-    TweenMax.fromTo($('svg #body'), 3, {x: -1, repeat : -1, yoyo : true}, {x: 1, repeat : -1, yoyo : true});
+    let span = $(".letter"),
+        tlSmell = new TimelineMax({ repeat: -1 });
+    tlSmell.staggerFromTo($("svg .smell"), 3, { y: 50, autoAlpha: 0.5 }, { y: -20, autoAlpha: 1 }, 1);
+    TweenMax.fromTo($("svg #body"), 3, { x: -1, repeat: -1, yoyo: true }, { x: 1, repeat: -1, yoyo: true });
 
     class GSAPAnimation {
         static Init() {
             /*title-animation*/
-            $('.title-animation').length && this.sectionTitleAnimation('.title-animation'); 
+            $(".title-animation").length && this.sectionTitleAnimation(".title-animation");
         }
-        
+
         static sectionTitleAnimation(activeClass) {
             let sectionTitleLines = gsap.utils.toArray(activeClass);
 
-            sectionTitleLines.forEach(sectionTextLine => {
+            sectionTitleLines.forEach((sectionTextLine) => {
                 const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: sectionTextLine,
-                        start: 'top 90%',
-                        end: 'bottom 60%',
+                        start: "top 90%",
+                        end: "bottom 60%",
                         scrub: false,
                         markers: false,
-                        toggleActions: 'play none none none'
-                    }
+                        toggleActions: "play none none none",
+                    },
                 });
 
                 const itemSplitted = new SplitText(sectionTextLine, { type: "chars, words" });
                 gsap.set(sectionTextLine, { perspective: 100 });
-                itemSplitted.split({ type: "words" })
+                itemSplitted.split({ type: "words" });
                 tl.from(itemSplitted.words, {
-                    opacity: 0, 
-                    autoAlpha: 0, 
+                    opacity: 0,
+                    autoAlpha: 0,
                     transformOrigin: "top center -50",
                     y: "10px",
                     duration: 0.9,
@@ -72,25 +68,28 @@
 
     class RRDEVS {
         static LoadedAfter() {
-            $('#preloader').delay(1).fadeOut(0);
+            $("#preloader").delay(1).fadeOut(0);
 
-            $('.odometer').waypoint(function(direction) {
-                if (direction === 'down') {
-                    let countNumber = $(this.element).attr("data-count");
-                    $(this.element).html(countNumber);
+            $(".odometer").waypoint(
+                function (direction) {
+                    if (direction === "down") {
+                        let countNumber = $(this.element).attr("data-count");
+                        $(this.element).html(countNumber);
+                    }
+                },
+                {
+                    offset: "80%",
                 }
-            }, {
-                offset: '80%'
-            });
+            );
 
             /*Wow Js*/
-            if ($('.wow').length) {
+            if ($(".wow").length) {
                 var wow = new WOW({
-                    boxClass: 'wow',
-                    animateClass: 'animated',
+                    boxClass: "wow",
+                    animateClass: "animated",
                     offset: 0,
                     mobile: false,
-                    live: true
+                    live: true,
                 });
                 wow.init();
             }
@@ -103,10 +102,10 @@
     /*======================================
       Preloader activation
       ========================================*/
-    $(window).on('load', RRDEVS.LoadedAfter);
-    $(".preloader-close").on("click",  RRDEVS.LoadedAfter)
+    $(window).on("load", RRDEVS.LoadedAfter);
+    $(".preloader-close").on("click", RRDEVS.LoadedAfter);
 
-    window.addEventListener('resize', function() {
+    window.addEventListener("resize", function () {
         gsap.globalTimeline.clear();
     });
 
@@ -127,8 +126,8 @@
         $(".offcanvas__overlay").removeClass("overlay-open");
     });
     // Scroll to bottom then close navbar
-    $(window).scroll(function(){
-        if($("body").scrollTop() > 0 || $("html").scrollTop() > 0) {
+    $(window).scroll(function () {
+        if ($("body").scrollTop() > 0 || $("html").scrollTop() > 0) {
             $(".offcanvas__area").removeClass("info-open");
             $(".offcanvas__overlay").removeClass("overlay-open");
         }
@@ -177,27 +176,30 @@
     /*======================================
       Page Scroll Percentage
       ========================================*/
-    const scrollTopPercentage = ()=> {
+    const scrollTopPercentage = () => {
         const scrollPercentage = () => {
             const scrollTopPos = document.documentElement.scrollTop;
             const calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrollValue = Math.round((scrollTopPos / calcHeight) * 100);
             const scrollElementWrap = $("#scroll-percentage");
 
-            scrollElementWrap.css("background", `conic-gradient( var(--rr-theme-primary) ${scrollValue}%, var(--rr-theme-secondary) ${scrollValue}%)`);
+            scrollElementWrap.css(
+                "background",
+                `conic-gradient( var(--rr-theme-primary) ${scrollValue}%, var(--rr-theme-secondary) ${scrollValue}%)`
+            );
 
-            if ( scrollTopPos > 100 ) {
+            if (scrollTopPos > 100) {
                 scrollElementWrap.addClass("active");
             } else {
                 scrollElementWrap.removeClass("active");
             }
 
-            if( scrollValue < 96 ) {
+            if (scrollValue < 96) {
                 $("#scroll-percentage-value").text(`${scrollValue}%`);
             } else {
                 $("#scroll-percentage-value").html('<i class="fa-solid fa-angle-up"></i>');
             }
-        }
+        };
         window.onscroll = scrollPercentage;
         window.onload = scrollPercentage;
 
@@ -205,39 +207,45 @@
         function scrollToTop() {
             document.documentElement.scrollTo({
                 top: 0,
-                behavior: "smooth"
+                behavior: "smooth",
             });
         }
 
         $("#scroll-percentage").on("click", scrollToTop);
-    }
+    };
     scrollTopPercentage();
 
     /*======================================
 	One Page Scroll Js
 	========================================*/
-    var link = $('.onepagenav #mobile-menu ul li a, .onepagenav .mean-nav ul li a');
-    link.on('click', function(e) {
-        var target = $($(this).attr('href'));
-        $('html, body').animate({
-            scrollTop: target.offset().top - 76
-        }, 600);
-        $(this).parent().addClass('active');
+    var link = $(".onepagenav #mobile-menu ul li a, .onepagenav .mean-nav ul li a");
+    link.on("click", function (e) {
+        var target = $($(this).attr("href"));
+        $("html, body").animate(
+            {
+                scrollTop: target.offset().top - 76,
+            },
+            600
+        );
+        $(this).parent().addClass("active");
         e.preventDefault();
     });
-    $(window).on('scroll', function(){
+    $(window).on("scroll", function () {
         scrNav();
     });
 
     function scrNav() {
         var sTop = $(window).scrollTop();
-        $('section').each(function() {
-            var id = $(this).attr('id'),
-                offset = $(this).offset().top-1,
+        $("section").each(function () {
+            var id = $(this).attr("id"),
+                offset = $(this).offset().top - 1,
                 height = $(this).height();
-            if(sTop >= offset && sTop < offset + height) {
-                link.parent().removeClass('active');
-                $('.main-menu').find('[href="#' + id + '"]').parent().addClass('active');
+            if (sTop >= offset && sTop < offset + height) {
+                link.parent().removeClass("active");
+                $(".main-menu")
+                    .find('[href="#' + id + '"]')
+                    .parent()
+                    .addClass("active");
             }
         });
     }
@@ -246,11 +254,14 @@
     /*======================================
 	Smoth animatio Js
 	========================================*/
-    $(document).on('click', '.smoth-animation', function (event) {
+    $(document).on("click", ".smoth-animation", function (event) {
         event.preventDefault();
-        $('html, body').animate({
-            scrollTop: $($.attr(this, 'href')).offset().top - 50
-        }, 300);
+        $("html, body").animate(
+            {
+                scrollTop: $($.attr(this, "href")).offset().top - 50,
+            },
+            300
+        );
     });
 
     /*testimonial__slider***/
@@ -265,7 +276,7 @@
         clickable: true,
         autoplay: {
             delay: 3000,
-        }
+        },
     });
 
     /*client-testimonial__slider***/
@@ -284,7 +295,7 @@
             0: {
                 slidesPerView: 1,
             },
-        }
+        },
     });
 
     /*client-feedback__slider***/
@@ -303,12 +314,14 @@
             0: {
                 slidesPerView: 1,
             },
-        }
-    }); 
+        },
+    });
 
-    $('.checkout-form__item-input-select select, .contact-us-message__form-input-select select, .book-a-table-3__select select, .book-a-table__content-form__select select, .header__lang__select select, .banner-3__book-a-table__select select, .book-a-table-2__form__select select').niceSelect();
-    $( "#datepicker" ).datepicker({
-        dateFormat: "y-mm-dd"
+    $(
+        ".checkout-form__item-input-select select, .contact-us-message__form-input-select select, .book-a-table-3__select select, .book-a-table__content-form__select select, .header__lang__select select, .banner-3__book-a-table__select select, .book-a-table-2__form__select select"
+    ).niceSelect();
+    $("#datepicker").datepicker({
+        dateFormat: "y-mm-dd",
     });
 
     $(".search-open-btn").on("click", function () {
@@ -321,18 +334,19 @@
 
     if ($(".count-bar").length) {
         $(".count-bar").appear(
-            function() {
+            function () {
                 var el = $(this);
                 var percent = el.data("percent");
                 $(el).css("width", percent).addClass("counted");
-            }, {
-                accY: -50
+            },
+            {
+                accY: -50,
             }
         );
     }
 
-    let banner__slider = new Swiper ('.banner__slider', {
-        slidesPerView: '1',
+    let banner__slider = new Swiper(".banner__slider", {
+        slidesPerView: "1",
         centeredSlides: true,
         loop: true,
         loopedSlides: 6,
@@ -340,8 +354,8 @@
             delay: 4000,
         },
     });
-    let banner__thumbnail = new Swiper ('.banner__thumbnail', {
-        slidesPerView: 'auto',
+    let banner__thumbnail = new Swiper(".banner__thumbnail", {
+        slidesPerView: "auto",
         spaceBetween: 10,
         centeredSlides: true,
         loop: true,
@@ -399,25 +413,25 @@
         },
     });
 
-    $('.grid').imagesLoaded(function () {
-        var $grid = $('.grid').isotope({
-            itemSelector: '.grid-item',
-            layoutMode: 'fitRows'
+    $(".grid").imagesLoaded(function () {
+        var $grid = $(".grid").isotope({
+            itemSelector: ".grid-item",
+            layoutMode: "fitRows",
         });
 
-        $('.masonary-menu').on('click', 'button', function () {
-            var filterValue = $(this).attr('data-filter');
+        $(".masonary-menu").on("click", "button", function () {
+            var filterValue = $(this).attr("data-filter");
             $grid.isotope({ filter: filterValue });
         });
-        $('.masonary-menu button').on('click', function (event) {
-            $(this).siblings('.active').removeClass('active');
-            $(this).addClass('active');
+        $(".masonary-menu button").on("click", function (event) {
+            $(this).siblings(".active").removeClass("active");
+            $(this).addClass("active");
             event.preventDefault();
         });
     });
 
     function lastNobullet() {
-        $(".last_no_bullet ul").each(function() {
+        $(".last_no_bullet ul").each(function () {
             var $listItems = $(this).find("li");
 
             if ($listItems.length > 1) {
@@ -428,21 +442,21 @@
 
     lastNobullet();
 
-    $(window).resize(function() {
+    $(window).resize(function () {
         lastNobullet();
     });
 
     function handleQuantityButtons() {
-        $('.product__quantity__group .minus').click(function() {
-            var input = $(this).closest('.product__quantity__group').find('input.qty');
+        $(".product__quantity__group .minus").click(function () {
+            var input = $(this).closest(".product__quantity__group").find("input.qty");
             var currentValue = parseInt(input.val());
             if (currentValue > 1) {
                 input.val(currentValue - 1).change();
             }
         });
 
-        $('.product__quantity__group .plus').click(function() {
-            var input = $(this).closest('.product__quantity__group').find('input.qty');
+        $(".product__quantity__group .plus").click(function () {
+            var input = $(this).closest(".product__quantity__group").find("input.qty");
             var currentValue = parseInt(input.val());
             input.val(currentValue + 1).change();
         });
@@ -451,38 +465,38 @@
     handleQuantityButtons();
 
     function handleServiceQuantityButtons() {
-        $('.shop-details__quantity-group .minus').click(function() {
-            var input = $(this).closest('.shop-details__quantity-group').find('input.qty');
+        $(".shop-details__quantity-group .minus").click(function () {
+            var input = $(this).closest(".shop-details__quantity-group").find("input.qty");
             var currentValue = parseInt(input.val());
             if (currentValue > 1) {
                 input.val(currentValue - 1).change();
             }
         });
-        $('.shop-details__quantity-group .plus').click(function() {
-            var input = $(this).closest('.shop-details__quantity-group').find('input.qty');
+        $(".shop-details__quantity-group .plus").click(function () {
+            var input = $(this).closest(".shop-details__quantity-group").find("input.qty");
             var currentValue = parseInt(input.val());
             input.val(currentValue + 1).change();
         });
     }
     handleServiceQuantityButtons();
 
-    $('#showlogin').on('click', function () {
-        $('#checkout-login').slideToggle(400);
+    $("#showlogin").on("click", function () {
+        $("#checkout-login").slideToggle(400);
     });
-    $('#showcoupon').on('click', function () {
-        $('#checkout_coupon').slideToggle(400);
+    $("#showcoupon").on("click", function () {
+        $("#checkout_coupon").slideToggle(400);
     });
 
-    $('#contact-us-message__form').submit(function(event) {
+    $("#contact-us-message__form").submit(function (event) {
         event.preventDefault();
         var form = $(this);
         var valid = true;
 
-        form.find('.error-message').remove();
-        form.find('.success-message').remove();
+        form.find(".error-message").remove();
+        form.find(".success-message").remove();
 
-        form.find('input, textarea, select').each(function() {
-            if ($(this).val().trim() === '') {
+        form.find("input, textarea, select").each(function () {
+            if ($(this).val().trim() === "") {
                 valid = false;
                 $(this).parent().after('<p class="error-message  mt-3 mb-0">This field is required.</p>');
             }
@@ -492,23 +506,22 @@
             return;
         }
 
-        $('.loading-form').show();
+        $(".loading-form").show();
 
-        setTimeout(function() {
+        setTimeout(function () {
             $.ajax({
-                type: form.attr('method'),
-                url: form.attr('action'),
-                data: form.serialize()
-            }).done(function(data) {
-                $('.loading-form').hide();
-                form.append('<p class="success-message mt-3 mb-0">Your message has been sent successfully.</p>');
-            }).fail(function(data) {
-                $('.loading-form').hide();
-                form.append('<p class="error-message mt-3 mb-0">Something went wrong. Please try again later.</p>');
-            });
+                type: form.attr("method"),
+                url: form.attr("action"),
+                data: form.serialize(),
+            })
+                .done(function (data) {
+                    $(".loading-form").hide();
+                    form.append('<p class="success-message mt-3 mb-0">Your message has been sent successfully.</p>');
+                })
+                .fail(function (data) {
+                    $(".loading-form").hide();
+                    form.append('<p class="error-message mt-3 mb-0">Something went wrong. Please try again later.</p>');
+                });
         }, 1000);
     });
-
-
 })(jQuery);
-

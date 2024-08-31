@@ -34,8 +34,8 @@ const email = ref(authData.email);
                                 />
                                 <button type="submit" class="rr-btn-3__header">
                                     <span class="btn-wrap">
-                                        <span class="text-one">Change</span>
-                                        <span class="text-two">Change</span>
+                                        <span class="text-one">Change <i class="fa-regular fa-user-pen"></i></span>
+                                        <span class="text-two">Change <i class="fa-regular fa-user-pen"></i></span>
                                     </span>
                                 </button>
                             </div>
@@ -118,8 +118,12 @@ const email = ref(authData.email);
                             <div class="col-12 mb-50">
                                 <button type="submit" class="rr-btn-solid">
                                     <span class="btn-wrap">
-                                        <span class="text-one">Save Changes <i class="fa-light fa-save"></i></span>
-                                        <span class="text-two">Save Changes <i class="fa-light fa-save"></i></span>
+                                        <span class="text-one"
+                                            >Save Changes <i class="fa-regular fa-floppy-disk"></i
+                                        ></span>
+                                        <span class="text-two"
+                                            >Save Changes <i class="fa-regular fa-floppy-disk"></i
+                                        ></span>
                                     </span>
                                 </button>
                             </div>
@@ -132,6 +136,14 @@ const email = ref(authData.email);
                     <div class="section__title-wrapper text-center mb-35">
                         <h3 class="text-uppercase fw-bold mb-1">Your recipes</h3>
                         <p>View and update your recipes.</p>
+                        <router-link to="/recipes/new">
+                            <button type="button" class="rr-btn-3__header">
+                                <span class="btn-wrap">
+                                    <span class="text-one">Add Recipe <i class="fa-regular fa-plus"></i></span>
+                                    <span class="text-two">Add Recipe <i class="fa-regular fa-plus"></i></span>
+                                </span>
+                            </button>
+                        </router-link>
                     </div>
                     <form id="contact-us-message__form" class="contact-us-message__form" @submit.prevent="submitForm">
                         <div class="row">

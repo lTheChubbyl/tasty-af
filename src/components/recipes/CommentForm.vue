@@ -39,6 +39,7 @@ const submitComment = () => {
         return;
     }
     recipesStore.addRecipeComment(comment.value);
+    text.value = "";
 };
 </script>
 

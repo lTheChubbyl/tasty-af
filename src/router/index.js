@@ -28,7 +28,7 @@ const router = createRouter({
         { path: "/contact", name: "contact", component: ContactView },
         { path: "/recipes", name: "recipes", component: RecipesView },
         { path: "/recipes/:id", name: "recipe-detail", component: RecipeDetailView },
-        { path: "/auth/:mode?", name: "auth", component: UserAuthView, meta: { authRequired: false } },
+        { path: "/auth/", name: "auth", component: UserAuthView, meta: { authRequired: false } },
         {
             path: "/profile/:id",
             name: "user-view",
@@ -66,7 +66,8 @@ router.beforeEach((to, from, next) => {
         next("/auth");
     } else if (to.meta.authRequired === false && localStorage.getItem("authData")) {
         console.log("profile");
-        next("/profile/1");
+        const authData = JSON.parse(localStorage.getItem("authData"));
+        next(`/profile/${authData.localId}`);
     } else {
         console.log("next");
         next();

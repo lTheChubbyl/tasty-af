@@ -35,7 +35,7 @@ export const useAuthStore = defineStore("auth", () => {
                         firstName: payload.firstName,
                         lastName: payload.lastName,
                     };
-                    await axios.put(
+                    await axios.post(
                         `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/users/${userId.value}.json?auth=${token.value}`,
                         userData
                     );
@@ -109,7 +109,7 @@ export const useAuthStore = defineStore("auth", () => {
             const response = await axios.get(
                 `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/users/${userId.value}.json?auth=${token.value}`
             );
-            user.value = response.data;
+            user.value = Object.values(response.data)[0];
         } catch (error) {
             console.log("Error during user data request: ", error.message);
         }

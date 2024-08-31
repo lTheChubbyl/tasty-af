@@ -1,11 +1,26 @@
 <script setup>
+import { useRecipesStore } from "@/stores/recipes";
+import { useRoute } from "vue-router";
+import { computed } from "vue";
+
 defineOptions({
     name: "CommentPart",
 });
 
-defineProps({
+const props = defineProps({
     comment: Object,
 });
+
+const route = useRoute();
+const recipeId = +route.params.id;
+
+const recipesStore = useRecipesStore();
+
+const currentUserId = computed(() => JSON.parse(localStorage.getItem("authData"))?.localId);
+
+const deleteComment = async () => {
+    await recipesStore.deleteRecipeComment(recipeId, props.comment.id);
+};
 </script>
 
 <template>
@@ -22,6 +37,11 @@ defineProps({
                 </div>
             </div>
             <p class="mb-0">{{ comment.text }}</p>
+        </div>
+        <div class="ms-auto d-flex align-items-center" v-if="comment.userId === currentUserId">
+            <button @click="deleteComment">
+                <i class="fa-solid fa-trash-can text-danger cursor-pointer"></i>
+            </button>
         </div>
     </div>
 </template>
