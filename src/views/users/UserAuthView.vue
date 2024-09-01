@@ -1,8 +1,8 @@
 <script setup>
-import { ref } from "vue";
-
 import LoginForm from "@/components/users/LoginForm.vue";
 import RegisterForm from "@/components/users/RegisterForm.vue";
+import { ref, watch } from "vue";
+import { useRoute } from "vue-router";
 
 defineOptions({
     name: "UserAuthView",
@@ -12,7 +12,16 @@ defineOptions({
     },
 });
 
-const mode = ref("login");
+const route = useRoute();
+const mode = ref(null);
+mode.value = route.query.mode || "login";
+
+watch(
+    () => route.query.mode,
+    (newMode) => {
+        mode.value = newMode || "login";
+    }
+);
 </script>
 
 <template>
@@ -37,11 +46,9 @@ const mode = ref("login");
                         <login-form v-else></login-form>
                         <div class="col-12">
                             {{ mode === "register" ? "Already have an account?" : "Dont have an account?" }}
-                            <router-link
-                                to="/auth"
-                                @click.prevent="mode = mode === 'register' ? 'login' : 'register'"
-                                >{{ mode === "register" ? "Login instead" : "Register instead" }}</router-link
-                            >
+                            <router-link :to="mode === 'register' ? '/auth' : '/auth?mode=register'">
+                                {{ mode === "register" ? "Login instead" : "Register instead" }}
+                            </router-link>
                         </div>
                     </div>
                 </div>

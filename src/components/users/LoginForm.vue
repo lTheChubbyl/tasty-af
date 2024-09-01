@@ -39,28 +39,26 @@ const loginUser = async () => {
         <div class="row">
             <div class="col-12">
                 <div class="contact-us-message__form-input">
-                    <div class="validation__wrapper-up position-relative">
-                        <i class="fa-light fa-envelope"></i>
-                        <input name="email" id="email" type="email" placeholder="Email Address" v-model.trim="email" />
-                    </div>
+                    <base-input name="email" id="email" type="email" placeholder="Email Address" v-model.trim="email">
+                        <template #icon><i class="fa-light fa-envelope"></i></template
+                    ></base-input>
                 </div>
             </div>
             <div class="col-12">
                 <div class="contact-us-message__form-input">
-                    <div class="validation__wrapper-up position-relative">
-                        <i class="fa-light fa-lock-keyhole"></i>
-                        <input
-                            name="password"
-                            id="password"
-                            type="password"
-                            placeholder="Password"
-                            v-model.trim="password"
-                        />
-                    </div>
+                    <base-input
+                        name="password"
+                        id="password"
+                        type="password"
+                        placeholder="Password"
+                        v-model.trim="password"
+                    >
+                        <template #icon><i class="fa-light fa-lock-keyhole"></i></template
+                    ></base-input>
                 </div>
             </div>
 
-            <p v-if="!formIsValid">Please fill in all fields correctly.</p>
+            <p class="text-danger" v-if="!formIsValid">Login failed, credentials are not valid.</p>
 
             <!-- <p>Forgot Password?</p> -->
 
@@ -75,3 +73,5 @@ const loginUser = async () => {
         </div>
     </form>
 </template>
+
+<style scoped></style>

@@ -1,5 +1,6 @@
 <script setup>
 import { useAuthStore } from "@/stores/auth.js";
+import { useRecipesStore } from "@/stores/recipes";
 import { ref, onMounted } from "vue";
 
 defineOptions({
@@ -9,6 +10,11 @@ defineOptions({
 onMounted(() => {
     window.addEventListener("scroll", handleScroll);
 });
+
+const categoryArray = useRecipesStore().categoryArray;
+
+const searchOpened = ref(false);
+const isOverlayOpened = ref(false);
 const handleScroll = () => {
     if (window.scrollY > 10) {
         document.getElementById("header-sticky").classList.add("rr-sticky");
@@ -18,14 +24,9 @@ const handleScroll = () => {
 };
 
 const authStore = useAuthStore();
-
 const logoutUser = () => {
     authStore.logoutUser();
 };
-
-const searchOpened = ref(false);
-
-const isOverlayOpened = ref(false);
 </script>
 
 <template>
@@ -158,7 +159,11 @@ const isOverlayOpened = ref(false);
                             <div class="header__right d-none d-sm-inline-flex">
                                 <div class="header__action d-flex align-items-center">
                                     <div class="header__btn-wrap">
-                                        <router-link to="/auth" class="rr-btn-2__header" v-if="!authStore.token">
+                                        <router-link
+                                            to="/auth?mode=register"
+                                            class="rr-btn-2__header"
+                                            v-if="!authStore.token"
+                                        >
                                             <span class="hover-rl"></span>
                                             <span class="fake_hover"></span>
                                             <span class="btn-wrap">
@@ -193,26 +198,13 @@ const isOverlayOpened = ref(false);
                                                 <li class="has-dropdown">
                                                     <router-link to="/recipes">Recipes</router-link>
                                                     <ul class="submenu">
-                                                        <li><router-link to="/recipes">All recipes</router-link></li>
                                                         <li>
-                                                            <router-link to="/recipes?category=breakfast"
-                                                                >Breakfast recipes</router-link
-                                                            >
+                                                            <router-link to="/recipes">All recipes</router-link>
                                                         </li>
-                                                        <li>
-                                                            <router-link to="/recipes?category=lunch"
-                                                                >Lunch recipes</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/recipes?category=dinner"
-                                                                >Dinner recipes</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/recipes?category=dessert"
-                                                                >Dessert recipes</router-link
-                                                            >
+                                                        <li v-for="category in categoryArray" :key="category">
+                                                            <router-link :to="'/recipes?category=' + category.key">{{
+                                                                category.value
+                                                            }}</router-link>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -236,7 +228,7 @@ const isOverlayOpened = ref(false);
                                         </router-link>
                                     </li>
                                     <li>
-                                        <router-link :to="'/profile/' + authStore.userId + '/favorites'">
+                                        <router-link to="/favorites">
                                             <i class="fa-sharp fa-regular fa-heart fs-2"></i>
                                             <span>3</span>
                                         </router-link>

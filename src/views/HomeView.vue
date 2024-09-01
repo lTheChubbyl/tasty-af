@@ -68,10 +68,12 @@ defineOptions({
                             <div class="cta-2__content-text">
                                 <span class="text-uppercase">Get Ready to Ignite Your Taste Buds!</span>
                                 <h3 class="text-uppercase title-animation">
-                                    <a href="auth.html">Become a Part of Our Chef Family!</a>
+                                    <router-link to="/auth?mode=register"
+                                        >Become a Part of Our Chef Family!</router-link
+                                    >
                                 </h3>
                             </div>
-                            <a class="btn-book" href="auth.html">Sign Up Now</a>
+                            <router-link class="btn-book" to="/auth?mode=register">Sign Up Now</router-link>
                         </div>
                     </div>
                 </div>

@@ -15134,9 +15134,6 @@ a.ui-button:active {
 .wishlist-table tbody tr .product__price span {
     color: var(--rr-heading-primary);
 }
-.wishlist-table tbody tr .product__quantity {
-    padding-right: 74px;
-}
 @media only screen and (min-width: 768px) and (max-width: 991px),
     only screen and (min-width: 576px) and (max-width: 767px),
     (max-width: 575px) {

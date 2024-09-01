@@ -1,5 +1,6 @@
 <script setup>
 import BaseSidebarCard from "@/components/ui/BaseSidebarCard.vue";
+import { useRecipesStore } from "@/stores/recipes";
 
 defineOptions({
     name: "SidebarCategories",
@@ -8,14 +9,14 @@ defineOptions({
     },
 });
 
-const categories = ["All Recipes", "Breakfast", "Lunch", "Dinner", "Desserts"];
+const categoryArray = useRecipesStore().categoryArray;
 </script>
 
 <template>
     <base-sidebar-card title="Categories">
         <div class="sidebar__widget-category">
-            <router-link v-for="category in categories" :key="category" to="/recipes">
-                {{ category }}<i class="fa-solid fa-arrow-right"></i>
+            <router-link v-for="category in categoryArray" :key="category" :to="'/recipes?category=' + category.key">
+                {{ category.value }}<i class="fa-solid fa-arrow-right"></i>
             </router-link>
         </div>
     </base-sidebar-card>

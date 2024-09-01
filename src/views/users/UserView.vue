@@ -24,21 +24,6 @@ const email = ref(authData.email);
                     </div>
                     <form id="contact-us-message__form" class="contact-us-message__form" @submit.prevent="submitForm">
                         <div class="row">
-                            <div class="col-12 text-center mb-4">
-                                <img
-                                    src="https://i.pravatar.cc/150?img=8"
-                                    alt="Profile Picture"
-                                    class="rounded-circle mb-3"
-                                    width="150"
-                                    height="150"
-                                />
-                                <button type="submit" class="rr-btn-3__header">
-                                    <span class="btn-wrap">
-                                        <span class="text-one">Change <i class="fa-regular fa-user-pen"></i></span>
-                                        <span class="text-two">Change <i class="fa-regular fa-user-pen"></i></span>
-                                    </span>
-                                </button>
-                            </div>
                             <div class="col-12">
                                 <div class="contact-us-message__form-input">
                                     <div class="validation__wrapper-up position-relative">

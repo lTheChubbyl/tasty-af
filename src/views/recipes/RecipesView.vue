@@ -2,6 +2,7 @@
 import RecipePreview from "@/components/recipes/RecipePreview.vue";
 import SidebarSection from "@/components/recipes/SidebarSection.vue";
 import { useRecipesStore } from "@/stores/recipes";
+// import { onMounted } from "vue";
 
 defineOptions({
     name: "RecipesView",
@@ -13,6 +14,10 @@ defineOptions({
 
 const recipesStore = useRecipesStore();
 const recipes = recipesStore.recipesArray;
+// onMounted(async () => {
+//     const something = await recipesStore.searchRecipes("chicken");
+//     console.log(something);
+// });
 </script>
 
 <template>

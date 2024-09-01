@@ -1,14 +1,12 @@
 <script setup>
 import SidebarSearch from "./SidebarSearch.vue";
 import SidebarCategories from "./SIdebarCategories.vue";
-import SidebarTags from "./SidebarTags.vue";
 
 defineOptions({
     name: "SidebarSection",
     components: {
         SidebarSearch,
         SidebarCategories,
-        SidebarTags,
     },
 });
 </script>
@@ -20,8 +18,6 @@ defineOptions({
                 <sidebar-search></sidebar-search>
 
                 <sidebar-categories></sidebar-categories>
-
-                <!-- <sidebar-tags></sidebar-tags> -->
             </div>
         </div>
     </div>

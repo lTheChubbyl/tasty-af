@@ -14,9 +14,7 @@ defineProps({
     </div>
 
     <ul class="blog__details-meta mb-15">
-        <li>
-            <a href="blog-details.html"><i class="fa-regular fa-user"></i>by admin</a>
-        </li>
+        <li><i class="fa-solid fa-circle-user"></i>by {{ recipe.author || "Foodista" }}</li>
     </ul>
 
     <div class="blog__details-content">
@@ -27,9 +25,9 @@ defineProps({
         </ul>
 
         <h5>Instructions</h5>
-        <ul>
+        <ol>
             <li v-for="step in recipe.analyzedInstructions[0].steps" :key="step.number">{{ step.step }}</li>
-        </ul>
+        </ol>
 
         <div
             class="blog__details-pagination mb-60 mb-xs-50 mt-35 mt-xs-30 d-flex flex-column flex-md-row align-items-center justify-content-md-between"

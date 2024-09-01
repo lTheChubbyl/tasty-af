@@ -29,21 +29,8 @@ const router = createRouter({
         { path: "/recipes", name: "recipes", component: RecipesView },
         { path: "/recipes/:id", name: "recipe-detail", component: RecipeDetailView },
         { path: "/auth/", name: "auth", component: UserAuthView, meta: { authRequired: false } },
-        {
-            path: "/profile/:id",
-            name: "user-view",
-            component: UserView,
-            props: true,
-            meta: { authRequired: true },
-            children: [
-                {
-                    path: "favorites",
-                    name: "user-favorites",
-                    component: UserFavoritesView,
-                    meta: { authRequired: true },
-                },
-            ],
-        },
+        { path: "/profile", name: "user-view", component: UserView, props: true, meta: { authRequired: true } },
+        { path: "/favorites", name: "user-favorites", component: UserFavoritesView, meta: { authRequired: true } },
         { path: "/:notFound(.*)", name: "not-found", component: NotFound },
     ],
     scrollBehavior(to, from, savedPosition) {
@@ -66,8 +53,7 @@ router.beforeEach((to, from, next) => {
         next("/auth");
     } else if (to.meta.authRequired === false && localStorage.getItem("authData")) {
         console.log("profile");
-        const authData = JSON.parse(localStorage.getItem("authData"));
-        next(`/profile/${authData.localId}`);
+        next("/profile");
     } else {
         console.log("next");
         next();

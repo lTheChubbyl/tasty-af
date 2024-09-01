@@ -28,11 +28,7 @@ defineProps({
 
         <div class="blog-4__item-content">
             <ul class="blog-4__item-meta mb-15">
-                <li>
-                    <router-link :to="'/recipes/' + recipe.id"
-                        ><i class="fa-regular fa-user"></i>by {{ recipe.author }}</router-link
-                    >
-                </li>
+                <li><i class="fa-solid fa-circle-user"></i>by {{ recipe.author || "Foodista" }}</li>
             </ul>
 
             <h4 class="blog-4__item-content-title text-uppercase fw-bold mb-15">

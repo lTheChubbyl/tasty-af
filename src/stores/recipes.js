@@ -4,8 +4,15 @@ import axios from "axios";
 
 export const useRecipesStore = defineStore("recipes", () => {
     const recipesArray = ref([]);
+    const categoryArray = [
+        { key: "breakfast", value: "Breakfast" },
+        { key: "main-course", value: "Main Course" },
+        { key: "dessert", value: "Dessert" },
+        { key: "drink", value: "Drink" },
+    ];
     const token = ref("");
     const userId = ref("");
+    const isSearched = ref(false);
 
     recipesArray.value = [
         {
@@ -2425,11 +2432,33 @@ export const useRecipesStore = defineStore("recipes", () => {
         }
     };
 
+    const searchRecipes = async (searchText) => {
+        try {
+            const response = await axios.get(
+                `https://api.spoonacular.com/recipes/complexSearch?apiKey=603cdf5c46c24761820eaed747f75fbf&query=${searchText}&addRecipeInformation=true&addRecipeInstructions=true&number=5`
+            );
+            recipesArray.value = [];
+            for (const key in response.data.results) {
+                const recipe = {
+                    id: key,
+                    ...response.data.results[key],
+                };
+                recipesArray.value.push(recipe);
+            }
+            isSearched.value = true;
+            return recipesArray;
+        } catch (error) {
+            console.log("Error during recipes list request: ", error.message);
+        }
+    };
+
     return {
         recipesArray,
+        categoryArray,
         getRecipes,
         getRecipeComments,
         addRecipeComment,
         deleteRecipeComment,
+        searchRecipes,
     };
 });
