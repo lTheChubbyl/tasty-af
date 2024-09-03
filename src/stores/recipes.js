@@ -2379,7 +2379,7 @@ export const useRecipesStore = defineStore("recipes", () => {
                     };
                     recipesArray.value.push(recipe);
                 }
-                return recipesArray;
+                return recipesArray.value;
             } catch (error) {
                 console.log("Error during recipes list request: ", error.message);
             }

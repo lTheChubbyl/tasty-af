@@ -43,11 +43,11 @@ defineOptions({
                 <div class="row g-24">
                     <div class="col-12">
                         <div class="experience__item-wrapper">
-                            <home-counter :endCount="20" text="Recipes That Slap"></home-counter>
+                            <home-counter :endCount="150" text="Recipes That Slap"></home-counter>
 
                             <home-counter :endCount="45" text="Foodie Followers"></home-counter>
 
-                            <home-counter :endCount="8" text="Chefs On Fire"></home-counter>
+                            <home-counter :endCount="20" text="Chefs On Fire"></home-counter>
 
                             <home-counter notCounter text="Vibes In the Kitchen"></home-counter>
                         </div>

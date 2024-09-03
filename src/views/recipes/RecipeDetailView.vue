@@ -4,7 +4,6 @@ import CommentSection from "@/components/recipes/CommentSection.vue";
 import SidebarSection from "@/components/recipes/SidebarSection.vue";
 import { useRoute } from "vue-router";
 import { useRecipesStore } from "@/stores/recipes";
-import { onMounted, ref } from "vue";
 
 defineOptions({
     name: "RecipeDetailView",
@@ -19,12 +18,9 @@ const recipesStore = useRecipesStore();
 const route = useRoute();
 const recipeId = +route.params.id;
 
-const recipe = recipesStore.recipesArray.find((x) => x.id === recipeId);
-
-const commentsData = ref([]);
-onMounted(async () => {
-    commentsData.value = await recipesStore.getRecipeComments(recipeId);
-});
+const recipe =
+    recipesStore.recipesArray.find((x) => x.id === recipeId) ||
+    recipesStore.staticRecipesArray.find((x) => x.id === recipeId);
 </script>
 
 <template>
@@ -35,7 +31,7 @@ onMounted(async () => {
                     <div class="blog__details">
                         <recipe-full :recipe="recipe"></recipe-full>
 
-                        <comment-section :comments="commentsData"></comment-section>
+                        <comment-section></comment-section>
                     </div>
                 </div>
                 <sidebar-section></sidebar-section>

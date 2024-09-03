@@ -1,10 +1,21 @@
 <script setup>
+import { ref, onMounted } from "vue";
+import { useRecipesStore } from "@/stores/recipes";
+
 defineOptions({
     name: "HighlightedDescription",
 });
 
-defineProps({
+const props = defineProps({
     highlighted: Object,
+});
+
+const recipesStore = useRecipesStore();
+const recipeId = props.highlighted.id;
+const commentNum = ref([]);
+onMounted(async () => {
+    const commentsData = await recipesStore.getRecipeComments(recipeId);
+    commentNum.value = commentsData.length;
 });
 </script>
 
@@ -18,7 +29,7 @@ defineProps({
             <li>
                 <router-link :to="'/recipes/' + highlighted.id">
                     <img src="@/assets/imgs/blog-2/comment.png" alt="not found" />
-                    <span>{{ highlighted.commentsNum || 0 }} Comment/s</span>
+                    <span>{{ commentNum }} Comment/s</span>
                 </router-link>
             </li>
         </ul>

@@ -32,13 +32,13 @@ const comment = ref({
 const formIsValid = ref(true);
 const recipesStore = useRecipesStore();
 
-const submitComment = () => {
+const submitComment = async () => {
     formIsValid.value = true;
     if (text.value.trim() === "" || text.value.length < 3) {
         formIsValid.value = false;
         return;
     }
-    recipesStore.addRecipeComment(comment.value);
+    await recipesStore.addRecipeComment(comment.value);
     text.value = "";
 };
 </script>
