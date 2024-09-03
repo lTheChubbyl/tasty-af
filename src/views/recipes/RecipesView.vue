@@ -2,7 +2,7 @@
 import RecipePreview from "@/components/recipes/RecipePreview.vue";
 import SidebarSection from "@/components/recipes/SidebarSection.vue";
 import { useRecipesStore } from "@/stores/recipes";
-// import { onMounted } from "vue";
+import { ref, watch } from "vue";
 
 defineOptions({
     name: "RecipesView",
@@ -13,11 +13,24 @@ defineOptions({
 });
 
 const recipesStore = useRecipesStore();
-const recipes = recipesStore.recipesArray;
-// onMounted(async () => {
-//     const something = await recipesStore.searchRecipes("chicken");
-//     console.log(something);
-// });
+
+const recipes = ref(null);
+recipes.value = recipesStore.recipesArray;
+watch(
+    () => recipesStore.recipesArray,
+    (newVal) => {
+        recipes.value = newVal;
+    }
+);
+
+const searchActive = ref(false);
+searchActive.value = recipesStore.searchActive;
+watch(
+    () => recipesStore.searchActive,
+    (newVal) => {
+        searchActive.value = newVal;
+    }
+);
 </script>
 
 <template>
@@ -28,6 +41,11 @@ const recipes = recipesStore.recipesArray;
             <div class="row">
                 <div class="col-xl-8">
                     <div class="blog-4__left">
+                        <p v-if="searchActive" class="fs-2">
+                            Showing ({{ recipesStore.recipesArray.length }}) results for search term -
+                            <span class="fw-bold">"{{ recipesStore.searchTerm }}"</span>
+                        </p>
+
                         <recipe-preview v-for="recipe in recipes" :key="recipe.id" :recipe="recipe"></recipe-preview>
 
                         <ul class="blog-4__pagination d-flex flex-wrap align-items-center justify-content-start">

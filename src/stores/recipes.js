@@ -4,6 +4,7 @@ import axios from "axios";
 
 export const useRecipesStore = defineStore("recipes", () => {
     const recipesArray = ref([]);
+    const staticRecipesArray = ref([]);
     const categoryArray = [
         { key: "breakfast", value: "Breakfast" },
         { key: "main-course", value: "Main Course" },
@@ -12,9 +13,10 @@ export const useRecipesStore = defineStore("recipes", () => {
     ];
     const token = ref("");
     const userId = ref("");
-    const isSearched = ref(false);
+    const searchActive = ref(false);
+    const searchTerm = ref("");
 
-    recipesArray.value = [
+    staticRecipesArray.value = [
         {
             vegetarian: false,
             vegan: false,
@@ -2435,7 +2437,7 @@ export const useRecipesStore = defineStore("recipes", () => {
     const searchRecipes = async (searchText) => {
         try {
             const response = await axios.get(
-                `https://api.spoonacular.com/recipes/complexSearch?apiKey=603cdf5c46c24761820eaed747f75fbf&query=${searchText}&addRecipeInformation=true&addRecipeInstructions=true&number=5`
+                `https://api.spoonacular.com/recipes/complexSearch?apiKey=603cdf5c46c24761820eaed747f75fbf&query=${searchText}&addRecipeInformation=true&addRecipeInstructions=true&fillIngredients=true&number=5`
             );
             recipesArray.value = [];
             for (const key in response.data.results) {
@@ -2445,8 +2447,7 @@ export const useRecipesStore = defineStore("recipes", () => {
                 };
                 recipesArray.value.push(recipe);
             }
-            isSearched.value = true;
-            return recipesArray;
+            searchActive.value = true;
         } catch (error) {
             console.log("Error during recipes list request: ", error.message);
         }
@@ -2454,7 +2455,10 @@ export const useRecipesStore = defineStore("recipes", () => {
 
     return {
         recipesArray,
+        staticRecipesArray,
         categoryArray,
+        searchTerm,
+        searchActive,
         getRecipes,
         getRecipeComments,
         addRecipeComment,

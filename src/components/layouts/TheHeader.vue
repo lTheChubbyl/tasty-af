@@ -2,6 +2,7 @@
 import { useAuthStore } from "@/stores/auth.js";
 import { useRecipesStore } from "@/stores/recipes";
 import { ref, onMounted } from "vue";
+import { useRouter, useRoute } from "vue-router";
 
 defineOptions({
     name: "TheHeader",
@@ -10,8 +11,6 @@ defineOptions({
 onMounted(() => {
     window.addEventListener("scroll", handleScroll);
 });
-
-const categoryArray = useRecipesStore().categoryArray;
 
 const searchOpened = ref(false);
 const isOverlayOpened = ref(false);
@@ -26,6 +25,23 @@ const handleScroll = () => {
 const authStore = useAuthStore();
 const logoutUser = () => {
     authStore.logoutUser();
+};
+
+const recipesStore = useRecipesStore();
+const categoryArray = recipesStore.categoryArray;
+const searchInput = ref("");
+const router = useRouter();
+const route = useRoute();
+const searchRecipes = async () => {
+    if (searchInput.value) {
+        await recipesStore.searchRecipes(searchInput.value);
+        searchOpened.value = false;
+        if (route.path !== "/recipes") {
+            router.push("/recipes");
+        }
+        recipesStore.searchTerm = searchInput.value;
+        searchInput.value = "";
+    }
 };
 </script>
 
@@ -111,12 +127,13 @@ const logoutUser = () => {
                             </div>
                         </div>
                         <div class="search__form">
-                            <form @submit.prevent>
+                            <form @submit.prevent="searchRecipes">
                                 <div class="search__input">
                                     <input
                                         class="search-input-field"
                                         type="text"
                                         placeholder="Type here to search..."
+                                        v-model="searchInput"
                                     />
                                     <span class="search-focus-border"></span>
                                     <button type="submit">

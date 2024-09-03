@@ -10,7 +10,7 @@ defineOptions({
 });
 
 const recipesStore = useRecipesStore();
-const latestList = recipesStore.recipesArray.slice(0, 6);
+const latestList = recipesStore.staticRecipesArray;
 </script>
 
 <template>

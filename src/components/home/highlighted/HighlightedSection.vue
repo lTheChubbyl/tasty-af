@@ -12,7 +12,7 @@ defineOptions({
 });
 
 const recipesStore = useRecipesStore();
-const highlightedList = recipesStore.recipesArray.slice(0, 2);
+const highlightedList = recipesStore.staticRecipesArray.slice(0, 2);
 </script>
 
 <template>

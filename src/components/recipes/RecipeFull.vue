@@ -20,6 +20,8 @@ defineProps({
     <div class="blog__details-content">
         <h4>{{ recipe.title }}</h4>
         <p v-html="recipe.summary"></p>
+
+        <h5>ingredients</h5>
         <ul>
             <li v-for="ingredient in recipe.extendedIngredients" :key="ingredient.id">{{ ingredient.original }}</li>
         </ul>
