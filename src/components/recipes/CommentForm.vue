@@ -7,6 +7,8 @@ defineOptions({
     name: "CommentForm",
 });
 
+const emits = defineEmits(["commentAdded"]);
+
 const authData = JSON.parse(localStorage.getItem("authData"));
 const route = useRoute();
 
@@ -40,6 +42,11 @@ const submitComment = async () => {
     }
     await recipesStore.addRecipeComment(comment.value);
     text.value = "";
+    addComment();
+};
+
+const addComment = () => {
+    emits("commentAdded", true);
 };
 </script>
 

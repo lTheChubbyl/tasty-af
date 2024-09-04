@@ -2388,6 +2388,19 @@ export const useRecipesStore = defineStore("recipes", () => {
         }
     };
 
+    const addRecipe = async () => {
+        try {
+            token.value = JSON.parse(localStorage.getItem("authData")).idToken;
+            userId.value = JSON.parse(localStorage.getItem("authData")).localId;
+            const response = await axios.post(
+                `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/recipes.json?auth=${token.value}`
+            );
+            return response.data;
+        } catch (error) {
+            console.log("Error during recipe add request: ", error.message);
+        }
+    };
+
     const getRecipeComments = async (recipeId) => {
         try {
             const response = await axios.get(
@@ -2410,10 +2423,10 @@ export const useRecipesStore = defineStore("recipes", () => {
     const addRecipeComment = async (payload) => {
         try {
             token.value = JSON.parse(localStorage.getItem("authData")).idToken;
-
+            userId.value = JSON.parse(localStorage.getItem("authData")).localId;
             const response = await axios.post(
                 `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/recipes/${payload.recipeId}/comments.json?auth=${token.value}`,
-                { userId: userId, author: payload.author, date: payload.date, text: payload.text }
+                { userId: userId.value, author: payload.author, date: payload.date, text: payload.text }
             );
             return response.data;
         } catch (error) {
@@ -2460,6 +2473,7 @@ export const useRecipesStore = defineStore("recipes", () => {
         searchTerm,
         searchActive,
         getRecipes,
+        addRecipe,
         getRecipeComments,
         addRecipeComment,
         deleteRecipeComment,

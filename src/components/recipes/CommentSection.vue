@@ -17,15 +17,25 @@ const recipesStore = useRecipesStore();
 const route = useRoute();
 const recipeId = +route.params.id;
 const commentsData = ref([]);
-onMounted(async () => {
+
+const fetchComments = async () => {
     commentsData.value = await recipesStore.getRecipeComments(recipeId);
+};
+
+onMounted(() => {
+    fetchComments();
 });
+
 watch(
     () => commentsData.value,
     (newVal) => {
         commentsData.value = newVal;
     }
 );
+
+const reloadComments = async () => {
+    fetchComments();
+};
 </script>
 
 <template>
@@ -34,6 +44,6 @@ watch(
 
         <comment-part v-for="comment in commentsData" :key="comment.id" :comment="comment"></comment-part>
 
-        <comment-form></comment-form>
+        <comment-form @commentAdded="reloadComments"></comment-form>
     </div>
 </template>
