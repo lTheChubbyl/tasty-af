@@ -5,7 +5,10 @@ defineOptions({
 
 defineProps({
     recipe: Object,
+    isUserRecipe: Boolean,
 });
+
+defineEmits(["recipeEdit"]);
 </script>
 
 <template>
@@ -36,7 +39,20 @@ defineProps({
             </h4>
             <p class="blog-4__item-content-p mb-20 text-truncate" v-html="recipe.summary"></p>
 
-            <router-link :to="'/recipes/' + recipe.id" class="readmore"
+            <button
+                type="button"
+                class="rr-btn-3__header mb-30"
+                data-bs-toggle="modal"
+                data-bs-target="#addRecipeModal"
+                v-if="isUserRecipe"
+                @click="$emit('recipeEdit')"
+            >
+                <span class="btn-wrap">
+                    <span class="text-one">Edit Recipe <i class="fa-regular fa-plus"></i></span>
+                    <span class="text-two">Edit Recipe <i class="fa-regular fa-plus"></i></span>
+                </span>
+            </button>
+            <router-link :to="'/recipes/' + recipe.id" class="readmore" v-else
                 >Read Details <i class="fa-regular fa-angles-right"></i
             ></router-link>
         </div>

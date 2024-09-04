@@ -2,7 +2,7 @@
 import RecipePreview from "@/components/recipes/RecipePreview.vue";
 import SidebarSection from "@/components/recipes/SidebarSection.vue";
 import { useRecipesStore } from "@/stores/recipes";
-import { onMounted, ref, watch } from "vue";
+import { ref, watch } from "vue";
 
 defineOptions({
     name: "RecipesView",
@@ -15,16 +15,6 @@ defineOptions({
 const recipesStore = useRecipesStore();
 
 const recipes = ref(recipesStore.recipesArray);
-onMounted(async () => {
-    if (!localStorage.getItem("initialRecipes")) {
-        const initialRecipes = await recipesStore.getRecipes();
-        localStorage.setItem("initialRecipes", JSON.stringify(initialRecipes));
-    } else {
-        if (!recipesStore.recipesArray.length) {
-            recipesStore.recipesArray = JSON.parse(localStorage.getItem("initialRecipes"));
-        }
-    }
-});
 
 watch(
     () => recipesStore.recipesArray,

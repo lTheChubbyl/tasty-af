@@ -3,7 +3,7 @@ import TheHeader from "@/components/layouts/TheHeader.vue";
 import TheFooter from "@/components/layouts/TheFooter.vue";
 import { onMounted } from "vue";
 import { useAuthStore } from "@/stores/auth.js";
-const authStore = useAuthStore();
+import { useRecipesStore } from "@/stores/recipes";
 
 defineOptions({
     name: "App",
@@ -13,8 +13,19 @@ defineOptions({
     },
 });
 
-onMounted(() => {
+const authStore = useAuthStore();
+const recipesStore = useRecipesStore();
+onMounted(async () => {
     authStore.autoLogin();
+
+    if (!localStorage.getItem("initialRecipes")) {
+        const initialRecipes = await recipesStore.getRecipes();
+        localStorage.setItem("initialRecipes", JSON.stringify(initialRecipes));
+    } else {
+        if (!recipesStore.recipesArray.length) {
+            recipesStore.recipesArray = JSON.parse(localStorage.getItem("initialRecipes"));
+        }
+    }
 });
 </script>
 

@@ -50,16 +50,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "tablespoons",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 5.0,
-                            unitShort: "Tbsps",
-                            unitLong: "Tbsps",
-                        },
-                        metric: {
-                            amount: 5.0,
-                            unitShort: "Tbsps",
-                            unitLong: "Tbsps",
-                        },
+                        us: { amount: 5.0, unitShort: "Tbsps", unitLong: "Tbsps" },
+                        metric: { amount: 5.0, unitShort: "Tbsps", unitLong: "Tbsps" },
                     },
                 },
                 {
@@ -75,16 +67,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 0.25,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 59.147,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 0.25, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 59.147, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -100,16 +84,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "pounds",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 10.0,
-                            unitShort: "lb",
-                            unitLong: "pounds",
-                        },
-                        metric: {
-                            amount: 2.858,
-                            unitShort: "kgs",
-                            unitLong: "kgs",
-                        },
+                        us: { amount: 10.0, unitShort: "lb", unitLong: "pounds" },
+                        metric: { amount: 2.858, unitShort: "kgs", unitLong: "kgs" },
                     },
                 },
                 {
@@ -125,16 +101,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "teaspoon",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 0.5,
-                            unitShort: "tsps",
-                            unitLong: "teaspoons",
-                        },
-                        metric: {
-                            amount: 0.5,
-                            unitShort: "tsps",
-                            unitLong: "teaspoons",
-                        },
+                        us: { amount: 0.5, unitShort: "tsps", unitLong: "teaspoons" },
+                        metric: { amount: 0.5, unitShort: "tsps", unitLong: "teaspoons" },
                     },
                 },
                 {
@@ -150,16 +118,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "tablespoons",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 2.0,
-                            unitShort: "Tbsps",
-                            unitLong: "Tbsps",
-                        },
-                        metric: {
-                            amount: 2.0,
-                            unitShort: "Tbsps",
-                            unitLong: "Tbsps",
-                        },
+                        us: { amount: 2.0, unitShort: "Tbsps", unitLong: "Tbsps" },
+                        metric: { amount: 2.0, unitShort: "Tbsps", unitLong: "Tbsps" },
                     },
                 },
                 {
@@ -175,16 +135,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "g",
                     meta: ["plain", "homemade", "(I used my yogurt)"],
                     measures: {
-                        us: {
-                            amount: 2.822,
-                            unitShort: "oz",
-                            unitLong: "ounces",
-                        },
-                        metric: {
-                            amount: 80.0,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 2.822, unitShort: "oz", unitLong: "ounces" },
+                        metric: { amount: 80.0, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -200,16 +152,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "tsp",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 0.25,
-                            unitShort: "tsps",
-                            unitLong: "teaspoons",
-                        },
-                        metric: {
-                            amount: 0.25,
-                            unitShort: "tsps",
-                            unitLong: "teaspoons",
-                        },
+                        us: { amount: 0.25, unitShort: "tsps", unitLong: "teaspoons" },
+                        metric: { amount: 0.25, unitShort: "tsps", unitLong: "teaspoons" },
                     },
                 },
                 {
@@ -225,16 +169,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "tablespoon",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "Tbsp",
-                            unitLong: "Tbsp",
-                        },
-                        metric: {
-                            amount: 1.0,
-                            unitShort: "Tbsp",
-                            unitLong: "Tbsp",
-                        },
+                        us: { amount: 1.0, unitShort: "Tbsp", unitLong: "Tbsp" },
+                        metric: { amount: 1.0, unitShort: "Tbsp", unitLong: "Tbsp" },
                     },
                 },
             ],
@@ -246,7 +182,7 @@ export const useRecipesStore = defineStore("recipes", () => {
             image: "https://img.spoonacular.com/recipes/665550-556x370.jpg",
             imageType: "jpg",
             summary:
-                'Yogurt Marinated Lamb Skewers could be just the <b>gluten free</b> recipe you\'ve been looking for. One portion of this dish contains approximately <b>50g of protein</b>, <b>18g of fat</b>, and a total of <b>385 calories</b>. For <b>$4.43 per serving</b>, this recipe <b>covers 30%</b> of your daily requirements of vitamins and minerals. This recipe serves 12. This recipe is liked by 10 foodies and cooks. A mixture of veg oil, cumin, yogurt, and a handful of other ingredients are all it takes to make this recipe so scrumptious. It works well as a main course. From preparation to the plate, this recipe takes approximately <b>45 minutes</b>. It is brought to you by Foodista. All things considered, we decided this recipe <b>deserves a spoonacular score of 84%</b>. This score is excellent. Users who liked this recipe also liked <a href="https://spoonacular.com/recipes/yogurt-and-mint-marinated-lamb-skewers-1189831">Yogurt- and Mint-Marinated Lamb Skewers</a>, <a href="https://spoonacular.com/recipes/yogurt-and-mint-marinated-lamb-skewers-606500">Yogurt- and Mint-Marinated Lamb Skewers</a>, and <a href="https://spoonacular.com/recipes/yogurt-marinated-chicken-skewers-with-toum-garlic-sauce-1302303">Yogurt Marinated Chicken Skewers With Toum Garlic Sauce</a>.',
+                'Yogurt Marinated Lamb Skewers could be just the <b>gluten free</b> recipe you\\\'ve been looking for. One portion of this dish contains approximately <b>50g of protein</b>, <b>18g of fat</b>, and a total of <b>385 calories</b>. For <b>$4.43 per serving</b>, this recipe <b>covers 30%</b> of your daily requirements of vitamins and minerals. This recipe serves 12. This recipe is liked by 10 foodies and cooks. A mixture of veg oil, cumin, yogurt, and a handful of other ingredients are all it takes to make this recipe so scrumptious. It works well as a main course. From preparation to the plate, this recipe takes approximately <b>45 minutes</b>. It is brought to you by Foodista. All things considered, we decided this recipe <b>deserves a spoonacular score of 84%</b>. This score is excellent. Users who liked this recipe also liked <a href="https://spoonacular.com/recipes/yogurt-and-mint-marinated-lamb-skewers-1189831">Yogurt- and Mint-Marinated Lamb Skewers</a>, <a href="https://spoonacular.com/recipes/yogurt-and-mint-marinated-lamb-skewers-606500">Yogurt- and Mint-Marinated Lamb Skewers</a>, and <a href="https://spoonacular.com/recipes/yogurt-marinated-chicken-skewers-with-toum-garlic-sauce-1302303">Yogurt Marinated Chicken Skewers With Toum Garlic Sauce</a>.',
             cuisines: [],
             dishTypes: ["lunch", "main course", "main dish", "dinner"],
             diets: ["gluten free"],
@@ -261,12 +197,7 @@ export const useRecipesStore = defineStore("recipes", () => {
                             number: 1,
                             step: 'Bone the lamb and cut into 1" cubes.',
                             ingredients: [
-                                {
-                                    id: 0,
-                                    name: "bone",
-                                    localizedName: "bone",
-                                    image: "",
-                                },
+                                { id: 0, name: "bone", localizedName: "bone", image: "" },
                                 {
                                     id: 10017224,
                                     name: "lamb",
@@ -300,10 +231,7 @@ export const useRecipesStore = defineStore("recipes", () => {
                                     image: "https://spoonacular.com/cdn/equipment_100x100/bowl.jpg",
                                 },
                             ],
-                            length: {
-                                number: 7,
-                                unit: "minutes",
-                            },
+                            length: { number: 7, unit: "minutes" },
                         },
                     ],
                 },
@@ -346,16 +274,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "tablespoons",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 2.0,
-                            unitShort: "Tbsps",
-                            unitLong: "Tbsps",
-                        },
-                        metric: {
-                            amount: 2.0,
-                            unitShort: "Tbsps",
-                            unitLong: "Tbsps",
-                        },
+                        us: { amount: 2.0, unitShort: "Tbsps", unitLong: "Tbsps" },
+                        metric: { amount: 2.0, unitShort: "Tbsps", unitLong: "Tbsps" },
                     },
                 },
                 {
@@ -371,16 +291,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cups",
                     meta: ["diced", "yellow"],
                     measures: {
-                        us: {
-                            amount: 1.5,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 240.0,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 1.5, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 240.0, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -396,16 +308,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cups",
                     meta: ["diced", "trimmed", "(also called celeriac)"],
                     measures: {
-                        us: {
-                            amount: 1.5,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 234.0,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 1.5, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 234.0, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -421,16 +325,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "large",
                     meta: ["minced"],
                     measures: {
-                        us: {
-                            amount: 3.0,
-                            unitShort: "large",
-                            unitLong: "larges",
-                        },
-                        metric: {
-                            amount: 3.0,
-                            unitShort: "large",
-                            unitLong: "larges",
-                        },
+                        us: { amount: 3.0, unitShort: "large", unitLong: "larges" },
+                        metric: { amount: 3.0, unitShort: "large", unitLong: "larges" },
                     },
                 },
                 {
@@ -446,16 +342,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: ["green", "chopped"],
                     measures: {
-                        us: {
-                            amount: 0.5,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 50.0,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 0.5, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 50.0, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -471,16 +359,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 0.25,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 22.25,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 0.25, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 22.25, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -496,16 +376,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "",
                     meta: ["diced", "peeled"],
                     measures: {
-                        us: {
-                            amount: 0.5,
-                            unitShort: "",
-                            unitLong: "",
-                        },
-                        metric: {
-                            amount: 0.5,
-                            unitShort: "",
-                            unitLong: "",
-                        },
+                        us: { amount: 0.5, unitShort: "", unitLong: "" },
+                        metric: { amount: 0.5, unitShort: "", unitLong: "" },
                     },
                 },
                 {
@@ -521,16 +393,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "tablespoon",
                     meta: ["country-style"],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "Tbsp",
-                            unitLong: "Tbsp",
-                        },
-                        metric: {
-                            amount: 1.0,
-                            unitShort: "Tbsp",
-                            unitLong: "Tbsp",
-                        },
+                        us: { amount: 1.0, unitShort: "Tbsp", unitLong: "Tbsp" },
+                        metric: { amount: 1.0, unitShort: "Tbsp", unitLong: "Tbsp" },
                     },
                 },
                 {
@@ -546,16 +410,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "teaspoon",
                     meta: ["fresh", "minced"],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
-                        metric: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
+                        us: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
+                        metric: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
                     },
                 },
                 {
@@ -571,16 +427,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cups",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 5.0,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 1.175,
-                            unitShort: "l",
-                            unitLong: "liters",
-                        },
+                        us: { amount: 5.0, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 1.175, unitShort: "l", unitLong: "liters" },
                     },
                 },
                 {
@@ -596,16 +444,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: ["quartered"],
                     measures: {
-                        us: {
-                            amount: 0.6666667,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 100.0,
-                            unitShort: "ml",
-                            unitLong: "milliliters",
-                        },
+                        us: { amount: 0.6666667, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 100.0, unitShort: "ml", unitLong: "milliliters" },
                     },
                 },
                 {
@@ -621,16 +461,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cups",
                     meta: ["thinly sliced"],
                     measures: {
-                        us: {
-                            amount: 3.0,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 210.0,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 3.0, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 210.0, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -646,16 +478,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "teaspoon",
                     meta: ["to taste", "(, )"],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
-                        metric: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
+                        us: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
+                        metric: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
                     },
                 },
                 {
@@ -671,16 +495,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "teaspoon",
                     meta: ["black"],
                     measures: {
-                        us: {
-                            amount: 0.5,
-                            unitShort: "tsps",
-                            unitLong: "teaspoons",
-                        },
-                        metric: {
-                            amount: 0.5,
-                            unitShort: "tsps",
-                            unitLong: "teaspoons",
-                        },
+                        us: { amount: 0.5, unitShort: "tsps", unitLong: "teaspoons" },
+                        metric: { amount: 0.5, unitShort: "tsps", unitLong: "teaspoons" },
                     },
                 },
                 {
@@ -696,16 +512,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 0.5,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 92.5,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 0.5, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 92.5, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -721,16 +529,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: ["grated"],
                     measures: {
-                        us: {
-                            amount: 0.5,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 50.0,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 0.5, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 50.0, unitShort: "g", unitLong: "grams" },
                     },
                 },
             ],
@@ -742,7 +542,7 @@ export const useRecipesStore = defineStore("recipes", () => {
             image: "https://img.spoonacular.com/recipes/659513-556x370.jpg",
             imageType: "jpg",
             summary:
-                'Savoy Cabbage and Celery Root Soup with Leek Confit might be just the hor d\'oeuvre you are searching for. This recipe serves 7. Watching your figure? This gluten free recipe has <b>183 calories</b>, <b>5g of protein</b>, and <b>6g of fat</b> per serving. For <b>$1.51 per serving</b>, this recipe <b>covers 10%</b> of your daily requirements of vitamins and minerals. A mixture of vegetable broth, garlic cloves, celery root, and a handful of other ingredients are all it takes to make this recipe so flavorful. It will be a hit at your <b>Autumn</b> event. 2 people found this recipe to be scrumptious and satisfying. It is brought to you by Foodista. From preparation to the plate, this recipe takes roughly <b>45 minutes</b>. With a spoonacular <b>score of 50%</b>, this dish is good. Similar recipes include <a href="https://spoonacular.com/recipes/savoy-cabbage-and-celery-root-soup-with-leek-confit-1404279">Savoy Cabbage and Celery Root Soup with Leek Confit</a>, <a href="https://spoonacular.com/recipes/leek-and-celery-root-soup-619045">Leek and Celery Root Soup</a>, and <a href="https://spoonacular.com/recipes/silky-leek-celery-root-soup-38324">Silky Leek & Celery Root Soup</a>.',
+                'Savoy Cabbage and Celery Root Soup with Leek Confit might be just the hor d\\\'oeuvre you are searching for. This recipe serves 7. Watching your figure? This gluten free recipe has <b>183 calories</b>, <b>5g of protein</b>, and <b>6g of fat</b> per serving. For <b>$1.51 per serving</b>, this recipe <b>covers 10%</b> of your daily requirements of vitamins and minerals. A mixture of vegetable broth, garlic cloves, celery root, and a handful of other ingredients are all it takes to make this recipe so flavorful. It will be a hit at your <b>Autumn</b> event. 2 people found this recipe to be scrumptious and satisfying. It is brought to you by Foodista. From preparation to the plate, this recipe takes roughly <b>45 minutes</b>. With a spoonacular <b>score of 50%</b>, this dish is good. Similar recipes include <a href="https://spoonacular.com/recipes/savoy-cabbage-and-celery-root-soup-with-leek-confit-1404279">Savoy Cabbage and Celery Root Soup with Leek Confit</a>, <a href="https://spoonacular.com/recipes/leek-and-celery-root-soup-619045">Leek and Celery Root Soup</a>, and <a href="https://spoonacular.com/recipes/silky-leek-celery-root-soup-38324">Silky Leek & Celery Root Soup</a>.',
             cuisines: [],
             dishTypes: ["antipasti", "soup", "starter", "snack", "appetizer", "antipasto", "hor d'oeuvre"],
             diets: ["gluten free"],
@@ -757,12 +557,7 @@ export const useRecipesStore = defineStore("recipes", () => {
                             number: 1,
                             step: "Heat the olive oil in a heavy pot, such as a Le Creuset, over medium-high heat.",
                             ingredients: [
-                                {
-                                    id: 4053,
-                                    name: "olive oil",
-                                    localizedName: "olive oil",
-                                    image: "olive-oil.jpg",
-                                },
+                                { id: 4053, name: "olive oil", localizedName: "olive oil", image: "olive-oil.jpg" },
                             ],
                             equipment: [
                                 {
@@ -777,65 +572,27 @@ export const useRecipesStore = defineStore("recipes", () => {
                             number: 2,
                             step: "Add the onion, celery root, garlic, scallion tops, and leek confit. Saut until the onion softens, about 15 minutes.",
                             ingredients: [
-                                {
-                                    id: 11141,
-                                    name: "celeriac",
-                                    localizedName: "celeriac",
-                                    image: "celeriac.jpg",
-                                },
+                                { id: 11141, name: "celeriac", localizedName: "celeriac", image: "celeriac.jpg" },
                                 {
                                     id: 11291,
                                     name: "green onions",
                                     localizedName: "green onions",
                                     image: "spring-onions.jpg",
                                 },
-                                {
-                                    id: 11215,
-                                    name: "garlic",
-                                    localizedName: "garlic",
-                                    image: "garlic.png",
-                                },
-                                {
-                                    id: 11282,
-                                    name: "onion",
-                                    localizedName: "onion",
-                                    image: "brown-onion.png",
-                                },
-                                {
-                                    id: 11246,
-                                    name: "leek",
-                                    localizedName: "leek",
-                                    image: "leeks.jpg",
-                                },
+                                { id: 11215, name: "garlic", localizedName: "garlic", image: "garlic.png" },
+                                { id: 11282, name: "onion", localizedName: "onion", image: "brown-onion.png" },
+                                { id: 11246, name: "leek", localizedName: "leek", image: "leeks.jpg" },
                             ],
                             equipment: [],
-                            length: {
-                                number: 15,
-                                unit: "minutes",
-                            },
+                            length: { number: 15, unit: "minutes" },
                         },
                         {
                             number: 3,
                             step: "Add the apple, mustard, and rosemary, and cook for another couple of minutes. The mixture will be very aromatic.",
                             ingredients: [
-                                {
-                                    id: 2036,
-                                    name: "rosemary",
-                                    localizedName: "rosemary",
-                                    image: "rosemary.jpg",
-                                },
-                                {
-                                    id: 2046,
-                                    name: "mustard",
-                                    localizedName: "mustard",
-                                    image: "regular-mustard.jpg",
-                                },
-                                {
-                                    id: 9003,
-                                    name: "apple",
-                                    localizedName: "apple",
-                                    image: "apple.jpg",
-                                },
+                                { id: 2036, name: "rosemary", localizedName: "rosemary", image: "rosemary.jpg" },
+                                { id: 2046, name: "mustard", localizedName: "mustard", image: "regular-mustard.jpg" },
+                                { id: 9003, name: "apple", localizedName: "apple", image: "apple.jpg" },
                             ],
                             equipment: [],
                         },
@@ -843,18 +600,10 @@ export const useRecipesStore = defineStore("recipes", () => {
                             number: 4,
                             step: "Add the remaining ingredients and bring to a low simmer. Cover and simmer for 40 minutes. Adjust seasoning if needed.",
                             ingredients: [
-                                {
-                                    id: 1042027,
-                                    name: "seasoning",
-                                    localizedName: "seasoning",
-                                    image: "seasoning.png",
-                                },
+                                { id: 1042027, name: "seasoning", localizedName: "seasoning", image: "seasoning.png" },
                             ],
                             equipment: [],
-                            length: {
-                                number: 40,
-                                unit: "minutes",
-                            },
+                            length: { number: 40, unit: "minutes" },
                         },
                     ],
                 },
@@ -896,16 +645,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: ["frozen"],
                     measures: {
-                        us: {
-                            amount: 0.25,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 38.5,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 0.25, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 38.5, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -921,16 +662,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: ["quick"],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "cup",
-                            unitLong: "cup",
-                        },
-                        metric: {
-                            amount: 81.081,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 1.0, unitShort: "cup", unitLong: "cup" },
+                        metric: { amount: 81.081, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -946,16 +679,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 0.5,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 122.5,
-                            unitShort: "ml",
-                            unitLong: "milliliters",
-                        },
+                        us: { amount: 0.5, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 122.5, unitShort: "ml", unitLong: "milliliters" },
                     },
                 },
                 {
@@ -971,16 +696,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "teaspoons",
                     meta: ["low fat"],
                     measures: {
-                        us: {
-                            amount: 2.0,
-                            unitShort: "tsps",
-                            unitLong: "teaspoons",
-                        },
-                        metric: {
-                            amount: 2.0,
-                            unitShort: "tsps",
-                            unitLong: "teaspoons",
-                        },
+                        us: { amount: 2.0, unitShort: "tsps", unitLong: "teaspoons" },
+                        metric: { amount: 2.0, unitShort: "tsps", unitLong: "teaspoons" },
                     },
                 },
                 {
@@ -996,16 +713,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "teaspoon",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
-                        metric: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
+                        us: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
+                        metric: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
                     },
                 },
                 {
@@ -1021,16 +730,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "teaspoon",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 0.5,
-                            unitShort: "tsps",
-                            unitLong: "teaspoons",
-                        },
-                        metric: {
-                            amount: 0.5,
-                            unitShort: "tsps",
-                            unitLong: "teaspoons",
-                        },
+                        us: { amount: 0.5, unitShort: "tsps", unitLong: "teaspoons" },
+                        metric: { amount: 0.5, unitShort: "tsps", unitLong: "teaspoons" },
                     },
                 },
             ],
@@ -1089,24 +790,9 @@ export const useRecipesStore = defineStore("recipes", () => {
                                     localizedName: "cinnamon",
                                     image: "https://spoonacular.com/cdn/ingredients_100x100/cinnamon.jpg",
                                 },
-                                {
-                                    id: 19912,
-                                    name: "agave",
-                                    localizedName: "agave",
-                                    image: "agave.png",
-                                },
-                                {
-                                    id: 1077,
-                                    name: "milk",
-                                    localizedName: "milk",
-                                    image: "milk.png",
-                                },
-                                {
-                                    id: 8120,
-                                    name: "oats",
-                                    localizedName: "oats",
-                                    image: "rolled-oats.jpg",
-                                },
+                                { id: 19912, name: "agave", localizedName: "agave", image: "agave.png" },
+                                { id: 1077, name: "milk", localizedName: "milk", image: "milk.png" },
+                                { id: 8120, name: "oats", localizedName: "oats", image: "rolled-oats.jpg" },
                             ],
                             equipment: [
                                 {
@@ -1116,10 +802,7 @@ export const useRecipesStore = defineStore("recipes", () => {
                                     image: "https://spoonacular.com/cdn/equipment_100x100/microwave.jpg",
                                 },
                             ],
-                            length: {
-                                number: 1,
-                                unit: "minutes",
-                            },
+                            length: { number: 1, unit: "minutes" },
                         },
                     ],
                 },
@@ -1162,16 +845,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cups",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 2.0,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 250.0,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 2.0, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 250.0, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -1187,16 +862,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "tablespoons",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 2.0,
-                            unitShort: "Tbsps",
-                            unitLong: "Tbsps",
-                        },
-                        metric: {
-                            amount: 2.0,
-                            unitShort: "Tbsps",
-                            unitLong: "Tbsps",
-                        },
+                        us: { amount: 2.0, unitShort: "Tbsps", unitLong: "Tbsps" },
+                        metric: { amount: 2.0, unitShort: "Tbsps", unitLong: "Tbsps" },
                     },
                 },
                 {
@@ -1212,16 +879,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "ounce",
                     meta: ["softened"],
                     measures: {
-                        us: {
-                            amount: 8.0,
-                            unitShort: "oz",
-                            unitLong: "ounces",
-                        },
-                        metric: {
-                            amount: 226.796,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 8.0, unitShort: "oz", unitLong: "ounces" },
+                        metric: { amount: 226.796, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -1237,16 +896,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: ["dried"],
                     measures: {
-                        us: {
-                            amount: 0.33333334,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 40.404,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 0.33333334, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 40.404, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -1262,16 +913,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: ["dried"],
                     measures: {
-                        us: {
-                            amount: 0.33333334,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 48.333,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 0.33333334, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 48.333, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -1287,16 +930,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "teaspoon",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
-                        metric: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
+                        us: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
+                        metric: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
                     },
                 },
                 {
@@ -1312,16 +947,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "teaspoon",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
-                        metric: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
+                        us: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
+                        metric: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
                     },
                 },
                 {
@@ -1337,16 +964,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 0.75,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 150.0,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 0.75, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 150.0, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -1362,16 +981,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: ["unsalted", "melted"],
                     measures: {
-                        us: {
-                            amount: 0.5,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 113.5,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 0.5, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 113.5, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -1387,16 +998,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: ["toasted", "chopped"],
                     measures: {
-                        us: {
-                            amount: 0.6666667,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 78.0,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 0.6666667, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 78.0, unitShort: "g", unitLong: "grams" },
                     },
                 },
             ],
@@ -1408,7 +1011,7 @@ export const useRecipesStore = defineStore("recipes", () => {
             image: "https://img.spoonacular.com/recipes/656569-556x370.jpg",
             imageType: "jpg",
             summary:
-                'Polish Rugelach could be just the <b>lacto ovo vegetarian</b> recipe you\'ve been looking for. One serving contains <b>217 calories</b>, <b>3g of protein</b>, and <b>13g of fat</b>. For <b>39 cents per serving</b>, you get a dessert that serves 18. This recipe from Foodista requires ground cinnamon, butter, cream cheese, and walnuts. 2 people were glad they tried this recipe. From preparation to the plate, this recipe takes roughly <b>45 minutes</b>. Taking all factors into account, this recipe <b>earns a spoonacular score of 16%</b>, which is not so tremendous. Similar recipes are <a href="https://spoonacular.com/recipes/rugelach-672205">Rugelach</a>, <a href="https://spoonacular.com/recipes/rugelach-658855">Rugelach</a>, and <a href="https://spoonacular.com/recipes/for-rugelach-618734">for Rugelach</a>.',
+                'Polish Rugelach could be just the <b>lacto ovo vegetarian</b> recipe you\\\'ve been looking for. One serving contains <b>217 calories</b>, <b>3g of protein</b>, and <b>13g of fat</b>. For <b>39 cents per serving</b>, you get a dessert that serves 18. This recipe from Foodista requires ground cinnamon, butter, cream cheese, and walnuts. 2 people were glad they tried this recipe. From preparation to the plate, this recipe takes roughly <b>45 minutes</b>. Taking all factors into account, this recipe <b>earns a spoonacular score of 16%</b>, which is not so tremendous. Similar recipes are <a href="https://spoonacular.com/recipes/rugelach-672205">Rugelach</a>, <a href="https://spoonacular.com/recipes/rugelach-658855">Rugelach</a>, and <a href="https://spoonacular.com/recipes/for-rugelach-618734">for Rugelach</a>.',
             cuisines: [],
             dishTypes: ["dessert"],
             diets: ["lacto ovo vegetarian"],
@@ -1429,18 +1032,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                                     localizedName: "cream cheese",
                                     image: "cream-cheese.jpg",
                                 },
-                                {
-                                    id: 1001,
-                                    name: "butter",
-                                    localizedName: "butter",
-                                    image: "butter-sliced.jpg",
-                                },
-                                {
-                                    id: 0,
-                                    name: "dough",
-                                    localizedName: "dough",
-                                    image: "pizza-dough",
-                                },
+                                { id: 1001, name: "butter", localizedName: "butter", image: "butter-sliced.jpg" },
+                                { id: 0, name: "dough", localizedName: "dough", image: "pizza-dough" },
                             ],
                             equipment: [
                                 {
@@ -1455,12 +1048,7 @@ export const useRecipesStore = defineStore("recipes", () => {
                             number: 2,
                             step: "Add sugar; beat until fluffy.",
                             ingredients: [
-                                {
-                                    id: 19335,
-                                    name: "sugar",
-                                    localizedName: "sugar",
-                                    image: "sugar-in-bowl.png",
-                                },
+                                { id: 19335, name: "sugar", localizedName: "sugar", image: "sugar-in-bowl.png" },
                             ],
                             equipment: [],
                         },
@@ -1491,30 +1079,10 @@ export const useRecipesStore = defineStore("recipes", () => {
                                     localizedName: "cinnamon",
                                     image: "https://spoonacular.com/cdn/ingredients_100x100/cinnamon.jpg",
                                 },
-                                {
-                                    id: 12155,
-                                    name: "walnuts",
-                                    localizedName: "walnuts",
-                                    image: "walnuts.jpg",
-                                },
-                                {
-                                    id: 1001,
-                                    name: "butter",
-                                    localizedName: "butter",
-                                    image: "butter-sliced.jpg",
-                                },
-                                {
-                                    id: 2025,
-                                    name: "nutmeg",
-                                    localizedName: "nutmeg",
-                                    image: "ground-nutmeg.jpg",
-                                },
-                                {
-                                    id: 19335,
-                                    name: "sugar",
-                                    localizedName: "sugar",
-                                    image: "sugar-in-bowl.png",
-                                },
+                                { id: 12155, name: "walnuts", localizedName: "walnuts", image: "walnuts.jpg" },
+                                { id: 1001, name: "butter", localizedName: "butter", image: "butter-sliced.jpg" },
+                                { id: 2025, name: "nutmeg", localizedName: "nutmeg", image: "ground-nutmeg.jpg" },
+                                { id: 19335, name: "sugar", localizedName: "sugar", image: "sugar-in-bowl.png" },
                             ],
                             equipment: [
                                 {
@@ -1534,46 +1102,22 @@ export const useRecipesStore = defineStore("recipes", () => {
                         {
                             number: 2,
                             step: "Place 1 dough piece on floured work surface.",
-                            ingredients: [
-                                {
-                                    id: 0,
-                                    name: "dough",
-                                    localizedName: "dough",
-                                    image: "pizza-dough",
-                                },
-                            ],
+                            ingredients: [{ id: 0, name: "dough", localizedName: "dough", image: "pizza-dough" }],
                             equipment: [],
                         },
                         {
                             number: 3,
                             step: "Roll out dough to about 1/8 inch thickness.",
                             ingredients: [
-                                {
-                                    id: 0,
-                                    name: "dough",
-                                    localizedName: "dough",
-                                    image: "pizza-dough",
-                                },
-                                {
-                                    id: 0,
-                                    name: "roll",
-                                    localizedName: "roll",
-                                    image: "dinner-yeast-rolls.jpg",
-                                },
+                                { id: 0, name: "dough", localizedName: "dough", image: "pizza-dough" },
+                                { id: 0, name: "roll", localizedName: "roll", image: "dinner-yeast-rolls.jpg" },
                             ],
                             equipment: [],
                         },
                         {
                             number: 4,
                             step: "Spread 3 tablespoons filling over round, leaving  - inch border.",
-                            ingredients: [
-                                {
-                                    id: 0,
-                                    name: "spread",
-                                    localizedName: "spread",
-                                    image: "",
-                                },
-                            ],
+                            ingredients: [{ id: 0, name: "spread", localizedName: "spread", image: "" }],
                             equipment: [],
                         },
                         {
@@ -1623,16 +1167,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "can",
                     meta: ["fat free"],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "can",
-                            unitLong: "can",
-                        },
-                        metric: {
-                            amount: 1.0,
-                            unitShort: "can",
-                            unitLong: "can",
-                        },
+                        us: { amount: 1.0, unitShort: "can", unitLong: "can" },
+                        metric: { amount: 1.0, unitShort: "can", unitLong: "can" },
                     },
                 },
                 {
@@ -1648,16 +1184,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 0.25,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 61.0,
-                            unitShort: "ml",
-                            unitLong: "milliliters",
-                        },
+                        us: { amount: 0.25, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 61.0, unitShort: "ml", unitLong: "milliliters" },
                     },
                 },
                 {
@@ -1673,16 +1201,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "",
                     meta: ["whole", "finely grated"],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "",
-                            unitLong: "",
-                        },
-                        metric: {
-                            amount: 1.0,
-                            unitShort: "",
-                            unitLong: "",
-                        },
+                        us: { amount: 1.0, unitShort: "", unitLong: "" },
+                        metric: { amount: 1.0, unitShort: "", unitLong: "" },
                     },
                 },
                 {
@@ -1698,16 +1218,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "grams",
                     meta: ["low fat"],
                     measures: {
-                        us: {
-                            amount: 15.873,
-                            unitShort: "oz",
-                            unitLong: "ounces",
-                        },
-                        metric: {
-                            amount: 450.0,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 15.873, unitShort: "oz", unitLong: "ounces" },
+                        metric: { amount: 450.0, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -1723,16 +1235,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "grams",
                     meta: ["fresh", "frozen", "canned", "(, or )"],
                     measures: {
-                        us: {
-                            amount: 1.102,
-                            unitShort: "lb",
-                            unitLong: "pounds",
-                        },
-                        metric: {
-                            amount: 500.0,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 1.102, unitShort: "lb", unitLong: "pounds" },
+                        metric: { amount: 500.0, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -1748,16 +1252,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "cup",
-                            unitLong: "cup",
-                        },
-                        metric: {
-                            amount: 244.0,
-                            unitShort: "ml",
-                            unitLong: "milliliters",
-                        },
+                        us: { amount: 1.0, unitShort: "cup", unitLong: "cup" },
+                        metric: { amount: 244.0, unitShort: "ml", unitLong: "milliliters" },
                     },
                 },
                 {
@@ -1773,16 +1269,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 0.5,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 100.0,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 0.5, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 100.0, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -1798,16 +1286,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "teaspoon",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
-                        metric: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
+                        us: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
+                        metric: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
                     },
                 },
                 {
@@ -1823,16 +1303,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "tablespoons",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 3.0,
-                            unitShort: "Tbsps",
-                            unitLong: "Tbsps",
-                        },
-                        metric: {
-                            amount: 3.0,
-                            unitShort: "Tbsps",
-                            unitLong: "Tbsps",
-                        },
+                        us: { amount: 3.0, unitShort: "Tbsps", unitLong: "Tbsps" },
+                        metric: { amount: 3.0, unitShort: "Tbsps", unitLong: "Tbsps" },
                     },
                 },
             ],
@@ -1859,18 +1331,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                             number: 1,
                             step: "Place the jug in the freezer and freeze until the mixture starts to set.Use the stick blender to mix the ice-cream again for about 30 seconds. Return the mix to the freezer.Repeat this step again as the ice-cream is setting.Once the mixture has been re-mixed twice, transfer the ice-cream to a deep metal dish and return to the freezer.  Choose a dish which is large enough and has enough space to use the stick blender.Blend in the metal container twice before allowing to completely freeze.",
                             ingredients: [
-                                {
-                                    id: 1053,
-                                    name: "cream",
-                                    localizedName: "cream",
-                                    image: "fluid-cream.jpg",
-                                },
-                                {
-                                    id: 10014412,
-                                    name: "ice",
-                                    localizedName: "ice",
-                                    image: "ice-cubes.png",
-                                },
+                                { id: 1053, name: "cream", localizedName: "cream", image: "fluid-cream.jpg" },
+                                { id: 10014412, name: "ice", localizedName: "ice", image: "ice-cubes.png" },
                             ],
                             equipment: [
                                 {
@@ -1891,12 +1353,7 @@ export const useRecipesStore = defineStore("recipes", () => {
                                     localizedName: "mango",
                                     image: "https://spoonacular.com/cdn/ingredients_100x100/mango.jpg",
                                 },
-                                {
-                                    id: 0,
-                                    name: "syrup",
-                                    localizedName: "syrup",
-                                    image: "",
-                                },
+                                { id: 0, name: "syrup", localizedName: "syrup", image: "" },
                             ],
                             equipment: [
                                 {
@@ -1916,48 +1373,23 @@ export const useRecipesStore = defineStore("recipes", () => {
                         {
                             number: 3,
                             step: "Heat the syrup and let it boil for 5 minutes stirring regularly.Reduce the heat slightly and stir for a further two minutes or until the mixture is at a desirable syrup consistently.  It will thicken slightly on cooling.",
-                            ingredients: [
-                                {
-                                    id: 0,
-                                    name: "syrup",
-                                    localizedName: "syrup",
-                                    image: "",
-                                },
-                            ],
+                            ingredients: [{ id: 0, name: "syrup", localizedName: "syrup", image: "" }],
                             equipment: [],
-                            length: {
-                                number: 7,
-                                unit: "minutes",
-                            },
+                            length: { number: 7, unit: "minutes" },
                         },
                         {
                             number: 4,
                             step: "Pour the cooled syrup over the ice-cream for a delicious Mango Cheesecake Ice-Cream.",
                             ingredients: [
-                                {
-                                    id: 1053,
-                                    name: "cream",
-                                    localizedName: "cream",
-                                    image: "fluid-cream.jpg",
-                                },
+                                { id: 1053, name: "cream", localizedName: "cream", image: "fluid-cream.jpg" },
                                 {
                                     id: 9176,
                                     name: "mango",
                                     localizedName: "mango",
                                     image: "https://spoonacular.com/cdn/ingredients_100x100/mango.jpg",
                                 },
-                                {
-                                    id: 0,
-                                    name: "syrup",
-                                    localizedName: "syrup",
-                                    image: "",
-                                },
-                                {
-                                    id: 10014412,
-                                    name: "ice",
-                                    localizedName: "ice",
-                                    image: "ice-cubes.png",
-                                },
+                                { id: 0, name: "syrup", localizedName: "syrup", image: "" },
+                                { id: 10014412, name: "ice", localizedName: "ice", image: "ice-cubes.png" },
                             ],
                             equipment: [],
                         },
@@ -2002,16 +1434,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "large",
                     meta: ["ripe"],
                     measures: {
-                        us: {
-                            amount: 2.0,
-                            unitShort: "large",
-                            unitLong: "larges",
-                        },
-                        metric: {
-                            amount: 2.0,
-                            unitShort: "large",
-                            unitLong: "larges",
-                        },
+                        us: { amount: 2.0, unitShort: "large", unitLong: "larges" },
+                        metric: { amount: 2.0, unitShort: "large", unitLong: "larges" },
                     },
                 },
                 {
@@ -2027,16 +1451,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "tablespoons",
                     meta: ["finely chopped"],
                     measures: {
-                        us: {
-                            amount: 2.0,
-                            unitShort: "Tbsps",
-                            unitLong: "Tbsps",
-                        },
-                        metric: {
-                            amount: 2.0,
-                            unitShort: "Tbsps",
-                            unitLong: "Tbsps",
-                        },
+                        us: { amount: 2.0, unitShort: "Tbsps", unitLong: "Tbsps" },
+                        metric: { amount: 2.0, unitShort: "Tbsps", unitLong: "Tbsps" },
                     },
                 },
                 {
@@ -2052,16 +1468,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "tablespoon",
                     meta: ["seeds removed)", "finely chopped"],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "Tbsp",
-                            unitLong: "Tbsp",
-                        },
-                        metric: {
-                            amount: 1.0,
-                            unitShort: "Tbsp",
-                            unitLong: "Tbsp",
-                        },
+                        us: { amount: 1.0, unitShort: "Tbsp", unitLong: "Tbsp" },
+                        metric: { amount: 1.0, unitShort: "Tbsp", unitLong: "Tbsp" },
                     },
                 },
                 {
@@ -2077,16 +1485,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "cup",
                     meta: ["fresh", "chopped"],
                     measures: {
-                        us: {
-                            amount: 0.25,
-                            unitShort: "cups",
-                            unitLong: "cups",
-                        },
-                        metric: {
-                            amount: 4.0,
-                            unitShort: "g",
-                            unitLong: "grams",
-                        },
+                        us: { amount: 0.25, unitShort: "cups", unitLong: "cups" },
+                        metric: { amount: 4.0, unitShort: "g", unitLong: "grams" },
                     },
                 },
                 {
@@ -2102,16 +1502,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "teaspoon",
                     meta: [],
                     measures: {
-                        us: {
-                            amount: 0.5,
-                            unitShort: "tsps",
-                            unitLong: "teaspoons",
-                        },
-                        metric: {
-                            amount: 0.5,
-                            unitShort: "tsps",
-                            unitLong: "teaspoons",
-                        },
+                        us: { amount: 0.5, unitShort: "tsps", unitLong: "teaspoons" },
+                        metric: { amount: 0.5, unitShort: "tsps", unitLong: "teaspoons" },
                     },
                 },
                 {
@@ -2127,16 +1519,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "teaspoon",
                     meta: ["black", "freshly ground"],
                     measures: {
-                        us: {
-                            amount: 0.125,
-                            unitShort: "tsps",
-                            unitLong: "teaspoons",
-                        },
-                        metric: {
-                            amount: 0.125,
-                            unitShort: "tsps",
-                            unitLong: "teaspoons",
-                        },
+                        us: { amount: 0.125, unitShort: "tsps", unitLong: "teaspoons" },
+                        metric: { amount: 0.125, unitShort: "tsps", unitLong: "teaspoons" },
                     },
                 },
                 {
@@ -2152,16 +1536,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "tablespoon",
                     meta: ["fresh"],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "Tbsp",
-                            unitLong: "Tbsp",
-                        },
-                        metric: {
-                            amount: 1.0,
-                            unitShort: "Tbsp",
-                            unitLong: "Tbsp",
-                        },
+                        us: { amount: 1.0, unitShort: "Tbsp", unitLong: "Tbsp" },
+                        metric: { amount: 1.0, unitShort: "Tbsp", unitLong: "Tbsp" },
                     },
                 },
                 {
@@ -2177,16 +1553,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "teaspoon",
                     meta: ["fresh", "chopped"],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
-                        metric: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
+                        us: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
+                        metric: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
                     },
                 },
                 {
@@ -2202,16 +1570,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                     unit: "teaspoon",
                     meta: ["fresh", "chopped"],
                     measures: {
-                        us: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
-                        metric: {
-                            amount: 1.0,
-                            unitShort: "tsp",
-                            unitLong: "teaspoon",
-                        },
+                        us: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
+                        metric: { amount: 1.0, unitShort: "tsp", unitLong: "teaspoon" },
                     },
                 },
             ],
@@ -2223,7 +1583,7 @@ export const useRecipesStore = defineStore("recipes", () => {
             image: "https://img.spoonacular.com/recipes/645988-556x370.jpg",
             imageType: "jpg",
             summary:
-                'Guacamole takes roughly <b>45 minutes</b> from beginning to end. Watching your figure? This gluten free, dairy free, paleolithic, and lacto ovo vegetarian recipe has <b>167 calories</b>, <b>2g of protein</b>, and <b>15g of fat</b> per serving. This recipe serves 4. For <b>87 cents per serving</b>, this recipe <b>covers 9%</b> of your daily requirements of vitamins and minerals. 20 people found this recipe to be flavorful and satisfying. A mixture of haas avocados, salt, cilantro, and a handful of other ingredients are all it takes to make this recipe so tasty. It works well as a very affordable hor d\'oeuvre. A couple people really liked this Mexican dish. It is brought to you by Foodista. With a spoonacular <b>score of 81%</b>, this dish is amazing. If you like this recipe, you might also like recipes such as <a href="https://spoonacular.com/recipes/guacamole-how-to-make-guacamole-mexican-guacamole-486710">guacamole , how to make guacamole | mexican guacamole</a>, <a href="https://spoonacular.com/recipes/fried-green-plantain-with-guacamole-and-shrimp-tostada-de-pltano-con-camarones-y-guacamole-1213029">Fried Green Plantain with Guacamole and Shrimp (Tostada de Plátano con Camarones y Guacamole)</a>, and <a href="https://spoonacular.com/recipes/fried-green-plantain-with-guacamole-and-shrimp-tostada-de-pltano-con-camarones-y-guacamole-226105">Fried Green Plantain with Guacamole and Shrimp (Tostada de Plátano con Camarones y Guacamole)</a>.',
+                'Guacamole takes roughly <b>45 minutes</b> from beginning to end. Watching your figure? This gluten free, dairy free, paleolithic, and lacto ovo vegetarian recipe has <b>167 calories</b>, <b>2g of protein</b>, and <b>15g of fat</b> per serving. This recipe serves 4. For <b>87 cents per serving</b>, this recipe <b>covers 9%</b> of your daily requirements of vitamins and minerals. 20 people found this recipe to be flavorful and satisfying. A mixture of haas avocados, salt, cilantro, and a handful of other ingredients are all it takes to make this recipe so tasty. It works well as a very affordable hor d\\\'oeuvre. A couple people really liked this Mexican dish. It is brought to you by Foodista. With a spoonacular <b>score of 81%</b>, this dish is amazing. If you like this recipe, you might also like recipes such as <a href="https://spoonacular.com/recipes/guacamole-how-to-make-guacamole-mexican-guacamole-486710">guacamole , how to make guacamole | mexican guacamole</a>, <a href="https://spoonacular.com/recipes/fried-green-plantain-with-guacamole-and-shrimp-tostada-de-pltano-con-camarones-y-guacamole-1213029">Fried Green Plantain with Guacamole and Shrimp (Tostada de Plátano con Camarones y Guacamole)</a>, and <a href="https://spoonacular.com/recipes/fried-green-plantain-with-guacamole-and-shrimp-tostada-de-pltano-con-camarones-y-guacamole-226105">Fried Green Plantain with Guacamole and Shrimp (Tostada de Plátano con Camarones y Guacamole)</a>.',
             cuisines: ["Mexican"],
             dishTypes: [
                 "antipasti",
@@ -2248,12 +1608,7 @@ export const useRecipesStore = defineStore("recipes", () => {
                             number: 1,
                             step: "Cut the avocados in half lengthwise. Drive chef's knife into large pit and twist to remove.  Scoop the avocado out from the skin into a bowl.",
                             ingredients: [
-                                {
-                                    id: 9037,
-                                    name: "avocado",
-                                    localizedName: "avocado",
-                                    image: "avocado.jpg",
-                                },
+                                { id: 9037, name: "avocado", localizedName: "avocado", image: "avocado.jpg" },
                             ],
                             equipment: [
                                 {
@@ -2274,67 +1629,22 @@ export const useRecipesStore = defineStore("recipes", () => {
                             number: 2,
                             step: "Mash the avocado with a fork, add in onion and cilantro, oregano and basil..",
                             ingredients: [
-                                {
-                                    id: 11165,
-                                    name: "cilantro",
-                                    localizedName: "cilantro",
-                                    image: "cilantro.png",
-                                },
-                                {
-                                    id: 9037,
-                                    name: "avocado",
-                                    localizedName: "avocado",
-                                    image: "avocado.jpg",
-                                },
-                                {
-                                    id: 2027,
-                                    name: "oregano",
-                                    localizedName: "oregano",
-                                    image: "oregano.jpg",
-                                },
-                                {
-                                    id: 2044,
-                                    name: "basil",
-                                    localizedName: "basil",
-                                    image: "basil.jpg",
-                                },
-                                {
-                                    id: 11282,
-                                    name: "onion",
-                                    localizedName: "onion",
-                                    image: "brown-onion.png",
-                                },
+                                { id: 11165, name: "cilantro", localizedName: "cilantro", image: "cilantro.png" },
+                                { id: 9037, name: "avocado", localizedName: "avocado", image: "avocado.jpg" },
+                                { id: 2027, name: "oregano", localizedName: "oregano", image: "oregano.jpg" },
+                                { id: 2044, name: "basil", localizedName: "basil", image: "basil.jpg" },
+                                { id: 11282, name: "onion", localizedName: "onion", image: "brown-onion.png" },
                             ],
                             equipment: [],
                         },
-                        {
-                            number: 3,
-                            step: "Mix to incorporate.",
-                            ingredients: [],
-                            equipment: [],
-                        },
+                        { number: 3, step: "Mix to incorporate.", ingredients: [], equipment: [] },
                         {
                             number: 4,
                             step: "Season to taste with salt, pepper and lime juice.",
                             ingredients: [
-                                {
-                                    id: 9160,
-                                    name: "lime juice",
-                                    localizedName: "lime juice",
-                                    image: "lime-juice.png",
-                                },
-                                {
-                                    id: 1002030,
-                                    name: "pepper",
-                                    localizedName: "pepper",
-                                    image: "pepper.jpg",
-                                },
-                                {
-                                    id: 2047,
-                                    name: "salt",
-                                    localizedName: "salt",
-                                    image: "salt.jpg",
-                                },
+                                { id: 9160, name: "lime juice", localizedName: "lime juice", image: "lime-juice.png" },
+                                { id: 1002030, name: "pepper", localizedName: "pepper", image: "pepper.jpg" },
+                                { id: 2047, name: "salt", localizedName: "salt", image: "salt.jpg" },
                             ],
                             equipment: [],
                         },
@@ -2342,18 +1652,8 @@ export const useRecipesStore = defineStore("recipes", () => {
                             number: 5,
                             step: "Serve immediately or chill.  If you are not going to eat the guacamole immediately, store in refrigerator with plastic film wrap pressed onto the guacamole.",
                             ingredients: [
-                                {
-                                    id: 1009037,
-                                    name: "guacamole",
-                                    localizedName: "guacamole",
-                                    image: "guacamole.jpg",
-                                },
-                                {
-                                    id: 10018364,
-                                    name: "wrap",
-                                    localizedName: "wrap",
-                                    image: "flour-tortilla.jpg",
-                                },
+                                { id: 1009037, name: "guacamole", localizedName: "guacamole", image: "guacamole.jpg" },
+                                { id: 10018364, name: "wrap", localizedName: "wrap", image: "flour-tortilla.jpg" },
                             ],
                             equipment: [],
                         },
@@ -2388,16 +1688,62 @@ export const useRecipesStore = defineStore("recipes", () => {
         }
     };
 
-    const addRecipe = async () => {
+    const addUserRecipe = async (payload) => {
         try {
             token.value = JSON.parse(localStorage.getItem("authData")).idToken;
             userId.value = JSON.parse(localStorage.getItem("authData")).localId;
             const response = await axios.post(
-                `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/recipes.json?auth=${token.value}`
+                `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/user-recipes/${userId.value}.json?auth=${token.value}`,
+                payload
             );
             return response.data;
         } catch (error) {
             console.log("Error during recipe add request: ", error.message);
+        }
+    };
+
+    const getUserRecipes = async () => {
+        token.value = JSON.parse(localStorage.getItem("authData")).idToken;
+        userId.value = JSON.parse(localStorage.getItem("authData")).localId;
+        try {
+            const response = await axios.get(
+                `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/user-recipes/${userId.value}.json?auth=${token.value}`
+            );
+            const userRecipesArray = [];
+            for (const key in response.data) {
+                const comment = {
+                    id: key,
+                    ...response.data[key],
+                };
+                userRecipesArray.push(comment);
+            }
+            return userRecipesArray;
+        } catch (error) {
+            console.log("Error during recipe get request: ", error.message);
+        }
+    };
+
+    const uploadRecipeImage = async (payload) => {
+        try {
+            token.value = JSON.parse(localStorage.getItem("authData")).idToken;
+            // Construct the upload URL
+            const uploadUrl = `https://firebasestorage.googleapis.com/v0/b/tasty-af.appspot.com/o?uploadType=multipart&name=recipes/${payload.recipeId}/${payload.imageName}`;
+
+            // Create FormData and append the image file
+            const formData = new FormData();
+            formData.append("file", payload.image);
+
+            // Send the POST request with FormData
+            const response = await axios.post(uploadUrl, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            });
+
+            console.log("Upload successful:", response.data);
+            return response.data;
+        } catch (error) {
+            console.log("Error during image upload request:", error.message);
         }
     };
 
@@ -2473,7 +1819,9 @@ export const useRecipesStore = defineStore("recipes", () => {
         searchTerm,
         searchActive,
         getRecipes,
-        addRecipe,
+        addUserRecipe,
+        getUserRecipes,
+        uploadRecipeImage,
         getRecipeComments,
         addRecipeComment,
         deleteRecipeComment,

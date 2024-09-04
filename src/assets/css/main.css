@@ -12412,10 +12412,6 @@ a.ui-button:active {
 .opening-time__content a:hover {
     color: var(--rr-common-black);
 }
-.opening-time__content a:hover img {
-    -webkit-filter: brightness(0) invert(1);
-    filter: brightness(0) invert(1);
-}
 
 .our-food-menu__top-up {
     margin-top: -100px;
