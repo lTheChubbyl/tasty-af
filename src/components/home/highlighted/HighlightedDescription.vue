@@ -23,13 +23,13 @@ onMounted(async () => {
     <div class="blog-2__item blog-2__item-text">
         <ul class="blog-2__item-author mb-20">
             <li>
-                <img src="@/assets/imgs/blog-2/author-1.png" alt="not found" />
+                by
                 <span>{{ highlighted.author || "Foodista" }}</span>
             </li>
             <li>
                 <router-link :to="'/recipes/' + highlighted.id">
                     <img src="@/assets/imgs/blog-2/comment.png" alt="not found" />
-                    <span>{{ commentNum }} Comment/s</span>
+                    <span class="ms-2">{{ commentNum }} Comment/s</span>
                 </router-link>
             </li>
         </ul>

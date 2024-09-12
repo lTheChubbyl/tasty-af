@@ -34,18 +34,18 @@ defineProps({
         <div
             class="blog__details-pagination mb-60 mb-xs-50 mt-35 mt-xs-30 d-flex flex-column flex-md-row align-items-center justify-content-md-between"
         >
-            <a href="blog-details.html" class="blog__details-pagination-prev d-flex align-items-center">
+            <!-- <a href="blog-details.html" class="blog__details-pagination-prev d-flex align-items-center">
                 <span class="thumb">
                     <img src="@/assets/imgs/blog-details/pagination-prev.jpg" alt="not found" />
                 </span>
                 <span class="text">
                     <span class="title">Previous Post</span>
                 </span>
-            </a>
+            </a> -->
 
-            <div class="dot"><img src="@/assets/imgs/blog-details/dot.png" alt="not found" /></div>
+            <div class="dot mx-auto"><img src="@/assets/imgs/blog-details/dot.png" alt="not found" /></div>
 
-            <a href="blog-details.html" class="blog__details-pagination-next d-flex align-items-center">
+            <!-- <a href="blog-details.html" class="blog__details-pagination-next d-flex align-items-center">
                 <span class="text">
                     <span class="title">Next Post</span>
                 </span>
@@ -53,7 +53,7 @@ defineProps({
                 <span class="thumb">
                     <img src="@/assets/imgs/blog-details/pagination-next.jpg" alt="not found" />
                 </span>
-            </a>
+            </a> -->
         </div>
     </div>
 </template>

@@ -244,12 +244,6 @@ const searchRecipes = async () => {
                                             <i class="fa-regular fa-circle-user fs-2"></i>
                                         </router-link>
                                     </li>
-                                    <li>
-                                        <router-link to="/favorites">
-                                            <i class="fa-sharp fa-regular fa-heart fs-2"></i>
-                                            <span>3</span>
-                                        </router-link>
-                                    </li>
                                 </ul>
                             </div>
                         </div>

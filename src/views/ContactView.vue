@@ -49,18 +49,6 @@ export default {
                                     </div>
                                 </div>
 
-                                <div class="col-xl-12">
-                                    <div class="contact-us-message__form-input-select d-flex flex-column">
-                                        <div class="validation__wrapper-up position-relative">
-                                            <select name="subject" id="subject">
-                                                <option value="">Select Subject</option>
-                                                <option value="order">Event Order</option>
-                                                <option value="objection">Objection</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <div class="col-sm-12">
                                     <div class="contact-us-message__form-input">
                                         <div class="validation__wrapper-up position-relative">

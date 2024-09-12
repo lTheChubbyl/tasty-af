@@ -14,7 +14,6 @@ const latestList = recipesStore.staticRecipesArray;
 </script>
 
 <template>
-    <!-- blog area start -->
     <section class="blog section-space__bottom">
         <div class="container">
             <div class="row g-24 mb-70 mb-sm-50 mb-xs-40 align-items-lg-end align-items-center">
@@ -40,5 +39,4 @@ const latestList = recipesStore.staticRecipesArray;
             </div>
         </div>
     </section>
-    <!-- blog area start -->
 </template>

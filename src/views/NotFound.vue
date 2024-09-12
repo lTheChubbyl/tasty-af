@@ -1,14 +1,29 @@
+<script setup></script>
+
 <template>
-    <div>
-        <h1>404 Not Found</h1>
-        <p>The page you are looking for does not exist.</p>
-    </div>
+    <section class="error section-space mt-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 g-24 text-center">
+                    <div class="error__media">
+                        <img class="img-fluid" src="@/assets/imgs/404/404.png" alt="icon not found" />
+                    </div>
+                    <div class="error__content mt-65 mt-md-55 mt-sm-50 mt-xs-40">
+                        <h1 class="error__content-title mb-10 title-animation">Page Not Found</h1>
+                        <p class="mb-35 mb-xs-30">
+                            Sorry, we couldn't find the page you where looking for. We suggest that you return to
+                            homepage.
+                        </p>
+
+                        <router-link to="/" class="rr-btn-solid rr-btn-solid-2 d-inline-flex wow clip-a-z">
+                            <span class="btn-wrap">
+                                <span class="text-one">Back To Homepage</span>
+                                <span class="text-two">Back To Homepage</span>
+                            </span>
+                        </router-link>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
-
-<script>
-export default {
-    name: "NotFound",
-};
-</script>
-
-<style scoped></style>

@@ -5,6 +5,7 @@ import axios from "axios";
 export const useRecipesStore = defineStore("recipes", () => {
     const recipesArray = ref([]);
     const staticRecipesArray = ref([]);
+    const userRecipesArray = ref([]);
     const categoryArray = [
         { key: "breakfast", value: "Breakfast" },
         { key: "main-course", value: "Main Course" },
@@ -1696,6 +1697,7 @@ export const useRecipesStore = defineStore("recipes", () => {
                 `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/user-recipes/${userId.value}.json?auth=${token.value}`,
                 payload
             );
+            userRecipesArray.value.push(response.data);
             return response.data;
         } catch (error) {
             console.log("Error during recipe add request: ", error.message);
@@ -1709,17 +1711,32 @@ export const useRecipesStore = defineStore("recipes", () => {
             const response = await axios.get(
                 `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/user-recipes/${userId.value}.json?auth=${token.value}`
             );
-            const userRecipesArray = [];
+            userRecipesArray.value = [];
             for (const key in response.data) {
-                const comment = {
+                const recipe = {
                     id: key,
                     ...response.data[key],
                 };
-                userRecipesArray.push(comment);
+                userRecipesArray.value.push(recipe);
             }
-            return userRecipesArray;
+            return userRecipesArray.value;
         } catch (error) {
             console.log("Error during recipe get request: ", error.message);
+        }
+    };
+
+    const deleteUserRecipe = async (recipeId) => {
+        token.value = JSON.parse(localStorage.getItem("authData")).idToken;
+        userId.value = JSON.parse(localStorage.getItem("authData")).localId;
+        //! FAKE
+        userRecipesArray.value = userRecipesArray.value.filter((recipe) => recipe.id !== recipeId);
+        try {
+            const response = await axios.delete(
+                `https://tasty-af-default-rtdb.europe-west1.firebasedatabase.app/user-recipes/${userId.value}/${recipeId}.json?auth=${token.value}`
+            );
+            return response.data;
+        } catch (error) {
+            console.log("Error during recipe delete request: ", error.message);
         }
     };
 
@@ -1814,6 +1831,7 @@ export const useRecipesStore = defineStore("recipes", () => {
 
     return {
         recipesArray,
+        userRecipesArray,
         staticRecipesArray,
         categoryArray,
         searchTerm,
@@ -1821,6 +1839,7 @@ export const useRecipesStore = defineStore("recipes", () => {
         getRecipes,
         addUserRecipe,
         getUserRecipes,
+        deleteUserRecipe,
         uploadRecipeImage,
         getRecipeComments,
         addRecipeComment,

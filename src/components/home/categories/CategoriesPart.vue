@@ -14,7 +14,7 @@ defineProps({
             <router-link :to="categories.categoryLink" class="our-service-2__item-media">
                 <img :src="'src/assets/imgs/' + categories.categoryImg" class="img-fluid" alt="image not found" />
             </router-link>
-            <a class="btn" :href="categories.categoryLink">{{ categories.categoryName }}</a>
+            <router-link class="btn" :to="categories.categoryLink">{{ categories.categoryName }}</router-link>
         </div>
     </div>
 </template>

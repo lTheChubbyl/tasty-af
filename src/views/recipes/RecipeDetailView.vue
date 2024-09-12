@@ -17,10 +17,12 @@ defineOptions({
 const recipesStore = useRecipesStore();
 const route = useRoute();
 const recipeId = +route.params.id;
+const recipeIdString = route.params.id;
 
 const recipe =
     recipesStore.recipesArray.find((x) => x.id === recipeId) ||
-    recipesStore.staticRecipesArray.find((x) => x.id === recipeId);
+    recipesStore.staticRecipesArray.find((x) => x.id === recipeId) ||
+    recipesStore.userRecipesArray.find((x) => x.id === recipeIdString);
 </script>
 
 <template>

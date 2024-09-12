@@ -9,7 +9,6 @@ import RecipeDetailView from "../views/recipes/RecipeDetailView.vue";
 // users
 import UserAuthView from "../views/users/UserAuthView.vue";
 import UserView from "../views/users/UserView.vue";
-import UserFavoritesView from "../views/users/UserFavoritesView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,7 +29,6 @@ const router = createRouter({
         { path: "/recipes/:id", name: "recipe-detail", component: RecipeDetailView },
         { path: "/auth/", name: "auth", component: UserAuthView, meta: { authRequired: false } },
         { path: "/profile", name: "user-view", component: UserView, meta: { authRequired: true } },
-        { path: "/favorites", name: "user-favorites", component: UserFavoritesView, meta: { authRequired: true } },
         { path: "/:notFound(.*)", name: "not-found", component: NotFound },
     ],
     scrollBehavior(to, from, savedPosition) {

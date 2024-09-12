@@ -32,7 +32,7 @@ setInterval(() => {
             count.value++;
         }
     }
-}, 100);
+}, 50);
 </script>
 
 <template>

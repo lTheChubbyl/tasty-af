@@ -25,6 +25,7 @@ const loginUser = async () => {
     try {
         await authStore.loginUser({ email: email.value, password: password.value });
     } catch (error) {
+        formIsValid.value = false;
         console.log("Login error: ", error.message);
     }
 };

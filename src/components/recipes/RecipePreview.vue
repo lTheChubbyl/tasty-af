@@ -1,14 +1,26 @@
 <script setup>
+import { useRecipesStore } from "@/stores/recipes";
+
 defineOptions({
     name: "RecipePreview",
 });
 
-defineProps({
+const props = defineProps({
     recipe: Object,
     isUserRecipe: Boolean,
 });
 
-defineEmits(["recipeEdit"]);
+const emit = defineEmits(["recipeEdit"]);
+
+const editRecipe = () => {
+    console.log(props.recipe, "from recipe preview");
+    emit("recipeEdit", props.recipe);
+};
+
+const recipesStore = useRecipesStore();
+const deleteRecipe = () => {
+    recipesStore.deleteUserRecipe(props.recipe.id);
+};
 </script>
 
 <template>
@@ -39,19 +51,23 @@ defineEmits(["recipeEdit"]);
             </h4>
             <p class="blog-4__item-content-p mb-20 text-truncate" v-html="recipe.summary"></p>
 
-            <button
-                type="button"
-                class="rr-btn-3__header mb-30"
-                data-bs-toggle="modal"
-                data-bs-target="#addRecipeModal"
-                v-if="isUserRecipe"
-                @click="$emit('recipeEdit')"
-            >
-                <span class="btn-wrap">
-                    <span class="text-one">Edit Recipe <i class="fa-regular fa-plus"></i></span>
-                    <span class="text-two">Edit Recipe <i class="fa-regular fa-plus"></i></span>
-                </span>
-            </button>
+            <div v-if="isUserRecipe" class="d-flex justify-content-between mb-30">
+                <button
+                    type="button"
+                    class="rr-btn-3__header"
+                    data-bs-toggle="modal"
+                    data-bs-target="#addRecipeModal"
+                    @click="editRecipe"
+                >
+                    <span class="btn-wrap">
+                        <span class="text-one">Edit Recipe <i class="fa-regular fa-plus"></i></span>
+                        <span class="text-two">Edit Recipe <i class="fa-regular fa-plus"></i></span>
+                    </span>
+                </button>
+                <button type="button" @click="deleteRecipe">
+                    <span class="fs-1 text-danger"><i class="fa-regular fa-trash-can"></i></span>
+                </button>
+            </div>
             <router-link :to="'/recipes/' + recipe.id" class="readmore" v-else
                 >Read Details <i class="fa-regular fa-angles-right"></i
             ></router-link>

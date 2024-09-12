@@ -1,7 +1,7 @@
 <script setup>
 import RecipePreview from "@/components/recipes/RecipePreview.vue";
 import { useRecipesStore } from "@/stores/recipes";
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 
 defineOptions({
     name: "UserView",
@@ -49,12 +49,16 @@ const fillIngredients = () => {
 const fillInstructions = () => {
     let instructions = [];
     let instructionsArray = rAnalyzedInstructions.value.split("|");
+    let instructionObj = {};
+    let steps = [];
     instructionsArray.forEach((element, index) => {
-        instructions.push({
+        steps.push({
             number: index + 1,
             step: element.trim(),
         });
     });
+    instructionObj.steps = steps;
+    instructions.push(instructionObj);
     return instructions;
 };
 
@@ -66,6 +70,7 @@ const addRecipe = () => {
         image:
             "https://firebasestorage.googleapis.com/v0/b/tasty-af.appspot.com/o/recipes%2F" +
             new Date().toISOString() +
+            "%2F" +
             new Date().toISOString() +
             "-1.jpg?alt=media",
         readyInMinutes: rMinutes.value,
@@ -91,10 +96,28 @@ const addRecipe = () => {
 
 const recipes = ref([]);
 onMounted(async () => {
-    recipes.value = await recipesStore.getUserRecipes();
+    if (recipes.value.length === 0) {
+        recipes.value = await recipesStore.getUserRecipes();
+    }
 });
 
-const editingMode = ref(false);
+watch(
+    () => recipesStore.userRecipesArray,
+    (newVal) => {
+        recipes.value = newVal;
+    }
+);
+
+const editMode = (recipe) => {
+    rTitle.value = recipe.title;
+    rMinutes.value = recipe.readyInMinutes;
+    rServings.value = recipe.servings;
+    rImage.value = recipe.image;
+    rSummary.value = recipe.summary;
+    rDishTypes.value = recipe.dishTypes;
+    rIngredients.value = recipe.extendedIngredients.map((ingredient) => ingredient.original).join("|");
+    rAnalyzedInstructions.value = recipe.analyzedInstructions.map((instruction) => instruction.step).join("|");
+};
 </script>
 <template>
     <base-half-hero title="Profile page" page="Profile" image="@/assets/imgs/cta-2/cta.jpg"></base-half-hero>
@@ -188,31 +211,41 @@ const editingMode = ref(false);
                                         <input
                                             class="form-check-input"
                                             type="checkbox"
-                                            value="Vegan"
-                                            id="vegan"
+                                            value="Breakfast"
+                                            id="breakfast"
                                             v-model="rDishTypes"
                                         />
-                                        <label class="form-check-label" for="vegan">Vegan</label>
+                                        <label class="form-check-label" for="vegan">Breakfast</label>
                                     </div>
                                     <div class="form-check">
                                         <input
                                             class="form-check-input"
                                             type="checkbox"
-                                            value="Vegetarian"
-                                            id="vegetarian"
+                                            value="Main course"
+                                            id="mainCourse"
                                             v-model="rDishTypes"
                                         />
-                                        <label class="form-check-label" for="vegetarian">Vegetarian</label>
+                                        <label class="form-check-label" for="mainCourse">Main course</label>
                                     </div>
                                     <div class="form-check">
                                         <input
                                             class="form-check-input"
                                             type="checkbox"
-                                            value="Gluten Free"
-                                            id="glutenFree"
+                                            value="Dessert"
+                                            id="dessert"
                                             v-model="rDishTypes"
                                         />
-                                        <label class="form-check-label" for="glutenFree">Gluten Free</label>
+                                        <label class="form-check-label" for="glutenFree">Dessert</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            value="Drink"
+                                            id="drink"
+                                            v-model="rDishTypes"
+                                        />
+                                        <label class="form-check-label" for="glutenFree">Drink</label>
                                     </div>
                                 </div>
                             </div>
@@ -382,12 +415,11 @@ const editingMode = ref(false);
                             v-for="recipe in recipes"
                             :key="recipe.id"
                             :recipe="recipe"
-                            @editRecipe="editingMode = true"
+                            @editRecipe="editMode(recipe)"
                         ></recipe-preview>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <router-view></router-view>
 </template>
